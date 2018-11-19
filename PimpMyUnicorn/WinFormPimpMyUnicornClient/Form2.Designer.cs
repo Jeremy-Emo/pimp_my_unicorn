@@ -225,6 +225,7 @@
             this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Catégorie :";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox1
             // 
