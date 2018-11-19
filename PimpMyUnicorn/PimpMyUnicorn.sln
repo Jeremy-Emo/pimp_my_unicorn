@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFPimpMyUnicorn", "WCFPimpMyUnicorn\WCFPimpMyUnicorn.csproj", "{B878168D-0A7C-4185-B96D-AF56C50F769D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormPimpMyUnicornAdmin", "WinFormPimpMyUnicornAdmin\WinFormPimpMyUnicornAdmin.csproj", "{123977A7-620D-4514-B989-5157579EE189}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B878168D-0A7C-4185-B96D-AF56C50F769D} = {B878168D-0A7C-4185-B96D-AF56C50F769D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormPimpMyUnicornClient", "WinFormPimpMyUnicornClient\WinFormPimpMyUnicornClient.csproj", "{0F965B36-A0A4-4340-850F-8ACDAF30CDF8}"
 EndProject
