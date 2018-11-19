@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormPimpMyUnicornClient
 {
-    public partial class Form2 : Form
+    public partial class InterfaceClient : Form
     {
-        public Form2()
+        public InterfaceClient()
         {
             InitializeComponent();
         }
