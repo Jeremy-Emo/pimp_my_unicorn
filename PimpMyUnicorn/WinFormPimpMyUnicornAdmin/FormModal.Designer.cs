@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.name_element = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.add_image = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox_ = new System.Windows.Forms.ComboBox();
+            this.link_image = new System.Windows.Forms.TextBox();
+            this.select_partie = new System.Windows.Forms.ComboBox();
             this.add_element = new System.Windows.Forms.Button();
             this.display_image = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.display_image)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // name_element
             // 
-            this.textBox1.Location = new System.Drawing.Point(52, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 0;
+            this.name_element.Location = new System.Drawing.Point(52, 71);
+            this.name_element.Name = "name_element";
+            this.name_element.Size = new System.Drawing.Size(194, 20);
+            this.name_element.TabIndex = 0;
             // 
             // openFileDialog1
             // 
@@ -59,20 +59,20 @@
             this.add_image.UseVisualStyleBackColor = true;
             this.add_image.Click += new System.EventHandler(this.add_image_Click);
             // 
-            // textBox2
+            // link_image
             // 
-            this.textBox2.Location = new System.Drawing.Point(52, 123);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(143, 20);
-            this.textBox2.TabIndex = 2;
+            this.link_image.Location = new System.Drawing.Point(52, 123);
+            this.link_image.Name = "link_image";
+            this.link_image.Size = new System.Drawing.Size(143, 20);
+            this.link_image.TabIndex = 2;
             // 
-            // comboBox_
+            // select_partie
             // 
-            this.comboBox_.FormattingEnabled = true;
-            this.comboBox_.Location = new System.Drawing.Point(52, 180);
-            this.comboBox_.Name = "comboBox_";
-            this.comboBox_.Size = new System.Drawing.Size(194, 21);
-            this.comboBox_.TabIndex = 3;
+            this.select_partie.FormattingEnabled = true;
+            this.select_partie.Location = new System.Drawing.Point(52, 180);
+            this.select_partie.Name = "select_partie";
+            this.select_partie.Size = new System.Drawing.Size(194, 21);
+            this.select_partie.TabIndex = 3;
             // 
             // add_element
             // 
@@ -98,10 +98,10 @@
             this.ClientSize = new System.Drawing.Size(1162, 590);
             this.Controls.Add(this.display_image);
             this.Controls.Add(this.add_element);
-            this.Controls.Add(this.comboBox_);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.select_partie);
+            this.Controls.Add(this.link_image);
             this.Controls.Add(this.add_image);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.name_element);
             this.Name = "FormModal";
             this.Text = "FormModal";
             ((System.ComponentModel.ISupportInitialize)(this.display_image)).EndInit();
@@ -112,11 +112,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox name_element;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button add_image;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox_;
+        private System.Windows.Forms.TextBox link_image;
+        private System.Windows.Forms.ComboBox select_partie;
         private System.Windows.Forms.Button add_element;
         private System.Windows.Forms.PictureBox display_image;
     }
