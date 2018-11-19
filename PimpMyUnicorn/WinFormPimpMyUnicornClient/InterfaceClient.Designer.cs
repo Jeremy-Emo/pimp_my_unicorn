@@ -34,6 +34,11 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.labelQueue = new System.Windows.Forms.Label();
+            this.labelRobe = new System.Windows.Forms.Label();
+            this.labelCriniere = new System.Windows.Forms.Label();
+            this.labelSabot = new System.Windows.Forms.Label();
+            this.labelCorne = new System.Windows.Forms.Label();
             this.comboBoxQueue = new System.Windows.Forms.ComboBox();
             this.buttonCreation = new System.Windows.Forms.Button();
             this.comboBoxRobe = new System.Windows.Forms.ComboBox();
@@ -41,14 +46,11 @@
             this.comboBoxSabot = new System.Windows.Forms.ComboBox();
             this.comboBoxCorne = new System.Windows.Forms.ComboBox();
             this.panelImage = new System.Windows.Forms.Panel();
-            this.labelCorne = new System.Windows.Forms.Label();
-            this.labelSabot = new System.Windows.Forms.Label();
-            this.labelCriniere = new System.Windows.Forms.Label();
-            this.labelRobe = new System.Windows.Forms.Label();
-            this.labelQueue = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelHeader.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelImage.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -120,6 +122,57 @@
             this.panel3.Size = new System.Drawing.Size(294, 611);
             this.panel3.TabIndex = 2;
             // 
+            // labelQueue
+            // 
+            this.labelQueue.AutoSize = true;
+            this.labelQueue.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQueue.Location = new System.Drawing.Point(33, 305);
+            this.labelQueue.Name = "labelQueue";
+            this.labelQueue.Size = new System.Drawing.Size(58, 17);
+            this.labelQueue.TabIndex = 23;
+            this.labelQueue.Text = "Queue :";
+            // 
+            // labelRobe
+            // 
+            this.labelRobe.AutoSize = true;
+            this.labelRobe.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRobe.Location = new System.Drawing.Point(33, 245);
+            this.labelRobe.Name = "labelRobe";
+            this.labelRobe.Size = new System.Drawing.Size(53, 17);
+            this.labelRobe.TabIndex = 22;
+            this.labelRobe.Text = "Robe : ";
+            // 
+            // labelCriniere
+            // 
+            this.labelCriniere.AutoSize = true;
+            this.labelCriniere.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCriniere.Location = new System.Drawing.Point(33, 181);
+            this.labelCriniere.Name = "labelCriniere";
+            this.labelCriniere.Size = new System.Drawing.Size(71, 17);
+            this.labelCriniere.TabIndex = 21;
+            this.labelCriniere.Text = "Crinière : ";
+            // 
+            // labelSabot
+            // 
+            this.labelSabot.AutoSize = true;
+            this.labelSabot.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSabot.Location = new System.Drawing.Point(33, 123);
+            this.labelSabot.Name = "labelSabot";
+            this.labelSabot.Size = new System.Drawing.Size(58, 17);
+            this.labelSabot.TabIndex = 20;
+            this.labelSabot.Text = "Sabot : ";
+            // 
+            // labelCorne
+            // 
+            this.labelCorne.AutoSize = true;
+            this.labelCorne.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorne.Location = new System.Drawing.Point(33, 62);
+            this.labelCorne.Name = "labelCorne";
+            this.labelCorne.Size = new System.Drawing.Size(59, 17);
+            this.labelCorne.TabIndex = 19;
+            this.labelCorne.Text = "Corne : ";
+            this.labelCorne.Click += new System.EventHandler(this.label2_Click_2);
+            // 
             // comboBoxQueue
             // 
             this.comboBoxQueue.FormattingEnabled = true;
@@ -172,64 +225,22 @@
             // 
             // panelImage
             // 
+            this.panelImage.Controls.Add(this.panel1);
             this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelImage.Location = new System.Drawing.Point(294, 62);
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(1068, 611);
             this.panelImage.TabIndex = 3;
             // 
-            // labelCorne
+            // panel1
             // 
-            this.labelCorne.AutoSize = true;
-            this.labelCorne.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorne.Location = new System.Drawing.Point(33, 62);
-            this.labelCorne.Name = "labelCorne";
-            this.labelCorne.Size = new System.Drawing.Size(59, 17);
-            this.labelCorne.TabIndex = 19;
-            this.labelCorne.Text = "Corne : ";
-            this.labelCorne.Click += new System.EventHandler(this.label2_Click_2);
+            this.panel1.BackColor = System.Drawing.Color.Violet;
+            this.panel1.Location = new System.Drawing.Point(990, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(78, 611);
+            this.panel1.TabIndex = 0;
             // 
-            // labelSabot
-            // 
-            this.labelSabot.AutoSize = true;
-            this.labelSabot.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSabot.Location = new System.Drawing.Point(33, 123);
-            this.labelSabot.Name = "labelSabot";
-            this.labelSabot.Size = new System.Drawing.Size(58, 17);
-            this.labelSabot.TabIndex = 20;
-            this.labelSabot.Text = "Sabot : ";
-            // 
-            // labelCriniere
-            // 
-            this.labelCriniere.AutoSize = true;
-            this.labelCriniere.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCriniere.Location = new System.Drawing.Point(33, 181);
-            this.labelCriniere.Name = "labelCriniere";
-            this.labelCriniere.Size = new System.Drawing.Size(71, 17);
-            this.labelCriniere.TabIndex = 21;
-            this.labelCriniere.Text = "Crinière : ";
-            // 
-            // labelRobe
-            // 
-            this.labelRobe.AutoSize = true;
-            this.labelRobe.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRobe.Location = new System.Drawing.Point(33, 245);
-            this.labelRobe.Name = "labelRobe";
-            this.labelRobe.Size = new System.Drawing.Size(53, 17);
-            this.labelRobe.TabIndex = 22;
-            this.labelRobe.Text = "Robe : ";
-            // 
-            // labelQueue
-            // 
-            this.labelQueue.AutoSize = true;
-            this.labelQueue.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQueue.Location = new System.Drawing.Point(33, 305);
-            this.labelQueue.Name = "labelQueue";
-            this.labelQueue.Size = new System.Drawing.Size(58, 17);
-            this.labelQueue.TabIndex = 23;
-            this.labelQueue.Text = "Queue :";
-            // 
-            // Form2
+            // InterfaceClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -238,13 +249,14 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelHeader);
-            this.Name = "Form2";
+            this.Name = "InterfaceClient";
             this.Text = "Pimp My Unicorn 2";
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panelImage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -269,5 +281,6 @@
         private System.Windows.Forms.Label labelCriniere;
         private System.Windows.Forms.Label labelSabot;
         private System.Windows.Forms.Label labelCorne;
+        private System.Windows.Forms.Panel panel1;
     }
 }
