@@ -37,7 +37,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelLeft = new System.Windows.Forms.Panel();
             this.labelQueue = new System.Windows.Forms.Label();
             this.labelRobe = new System.Windows.Forms.Label();
             this.labelCriniere = new System.Windows.Forms.Label();
@@ -50,10 +50,11 @@
             this.comboBoxSabot = new System.Windows.Forms.ComboBox();
             this.comboBoxCorne = new System.Windows.Forms.ComboBox();
             this.panelImage = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelRight = new System.Windows.Forms.Panel();
+            this.buttonEnregistrer = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelLeft.SuspendLayout();
             this.panelImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,7 +103,6 @@
             this.label1.Size = new System.Drawing.Size(175, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pimp My Unicorn";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -131,25 +131,26 @@
             this.panelFooter.Size = new System.Drawing.Size(1264, 68);
             this.panelFooter.TabIndex = 0;
             // 
-            // panel3
+            // panelLeft
             // 
-            this.panel3.BackColor = System.Drawing.Color.HotPink;
-            this.panel3.Controls.Add(this.labelQueue);
-            this.panel3.Controls.Add(this.labelRobe);
-            this.panel3.Controls.Add(this.labelCriniere);
-            this.panel3.Controls.Add(this.labelSabot);
-            this.panel3.Controls.Add(this.labelCorne);
-            this.panel3.Controls.Add(this.comboBoxQueue);
-            this.panel3.Controls.Add(this.buttonCreation);
-            this.panel3.Controls.Add(this.comboBoxRobe);
-            this.panel3.Controls.Add(this.comboBoxCriniere);
-            this.panel3.Controls.Add(this.comboBoxSabot);
-            this.panel3.Controls.Add(this.comboBoxCorne);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 62);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(222, 791);
-            this.panel3.TabIndex = 2;
+            this.panelLeft.BackColor = System.Drawing.Color.HotPink;
+            this.panelLeft.Controls.Add(this.buttonEnregistrer);
+            this.panelLeft.Controls.Add(this.labelQueue);
+            this.panelLeft.Controls.Add(this.labelRobe);
+            this.panelLeft.Controls.Add(this.labelCriniere);
+            this.panelLeft.Controls.Add(this.labelSabot);
+            this.panelLeft.Controls.Add(this.labelCorne);
+            this.panelLeft.Controls.Add(this.comboBoxQueue);
+            this.panelLeft.Controls.Add(this.buttonCreation);
+            this.panelLeft.Controls.Add(this.comboBoxRobe);
+            this.panelLeft.Controls.Add(this.comboBoxCriniere);
+            this.panelLeft.Controls.Add(this.comboBoxSabot);
+            this.panelLeft.Controls.Add(this.comboBoxCorne);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 62);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(222, 791);
+            this.panelLeft.TabIndex = 2;
             // 
             // labelQueue
             // 
@@ -200,7 +201,6 @@
             this.labelCorne.Size = new System.Drawing.Size(59, 17);
             this.labelCorne.TabIndex = 19;
             this.labelCorne.Text = "Corne : ";
-            this.labelCorne.Click += new System.EventHandler(this.label2_Click_2);
             // 
             // comboBoxQueue
             // 
@@ -218,7 +218,6 @@
             this.buttonCreation.TabIndex = 18;
             this.buttonCreation.Text = "Création";
             this.buttonCreation.UseVisualStyleBackColor = true;
-            this.buttonCreation.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBoxRobe
             // 
@@ -254,27 +253,38 @@
             // 
             // panelImage
             // 
-            this.panelImage.Controls.Add(this.panel7);
+            this.panelImage.Controls.Add(this.panelRight);
             this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelImage.Location = new System.Drawing.Point(0, 0);
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(1264, 921);
             this.panelImage.TabIndex = 3;
             // 
-            // panel7
+            // panelRight
             // 
-            this.panel7.BackColor = System.Drawing.Color.HotPink;
-            this.panel7.Location = new System.Drawing.Point(1042, 62);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(222, 791);
-            this.panel7.TabIndex = 0;
+            this.panelRight.BackColor = System.Drawing.Color.HotPink;
+            this.panelRight.Location = new System.Drawing.Point(1042, 62);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(222, 791);
+            this.panelRight.TabIndex = 0;
+            // 
+            // buttonEnregistrer
+            // 
+            this.buttonEnregistrer.BackColor = System.Drawing.Color.Lime;
+            this.buttonEnregistrer.Location = new System.Drawing.Point(86, 369);
+            this.buttonEnregistrer.Name = "buttonEnregistrer";
+            this.buttonEnregistrer.Size = new System.Drawing.Size(121, 27);
+            this.buttonEnregistrer.TabIndex = 24;
+            this.buttonEnregistrer.Text = "Enregistrer ma Licorne";
+            this.buttonEnregistrer.UseVisualStyleBackColor = false;
+            this.buttonEnregistrer.Click += new System.EventHandler(this.button1_Click);
             // 
             // InterfaceClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 921);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelImage);
@@ -283,12 +293,11 @@
             this.Name = "InterfaceClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pimp My Unicorn ";
-            this.Load += new System.EventHandler(this.InterfaceClient_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelLeft.ResumeLayout(false);
+            this.panelLeft.PerformLayout();
             this.panelImage.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -301,7 +310,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panelFooter;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelImage;
         private System.Windows.Forms.Button buttonCreation;
         private System.Windows.Forms.ComboBox comboBoxQueue;
@@ -317,6 +326,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelRight;
+        private System.Windows.Forms.Button buttonEnregistrer;
     }
 }

@@ -50,7 +50,9 @@
     <StartupObject>WinFormPimpMyUnicornClient.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -64,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ElementsDTO.cs" />
+    <Compile Include="DTO\PartiesDTO.cs" />
     <Compile Include="InterfaceClient.cs">
       <SubType>Form</SubType>
     </Compile>
