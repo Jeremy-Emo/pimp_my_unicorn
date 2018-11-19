@@ -59,15 +59,5 @@ namespace WinFormPimpMyUnicornClient.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Licorne {
-            get {
-                object obj = ResourceManager.GetObject("Licorne", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
