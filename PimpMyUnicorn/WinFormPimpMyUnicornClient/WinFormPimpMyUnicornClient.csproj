@@ -50,10 +50,7 @@
     <StartupObject>WinFormPimpMyUnicornClient.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.13\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
-    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -70,13 +67,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\ElementsDTO.cs" />
-    <Compile Include="DTO\PartiesDTO.cs" />
     <Compile Include="InterfaceClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InterfaceClient.Designer.cs">
       <DependentUpon>InterfaceClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\PartiesDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="InterfaceClient.resx">
