@@ -1,6 +1,6 @@
 ﻿namespace WinFormPimpMyUnicornAdmin
 {
-    partial class Form1
+    partial class FormAdmin
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

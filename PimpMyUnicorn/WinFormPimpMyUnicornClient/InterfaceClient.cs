@@ -69,5 +69,10 @@ namespace WinFormPimpMyUnicornClient
             using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(base64))) { newPicture = Image.FromStream(ms); }
             return newPicture;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
