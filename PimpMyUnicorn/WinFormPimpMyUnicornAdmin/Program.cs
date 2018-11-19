@@ -21,6 +21,7 @@ namespace WinFormPimpMyUnicornAdmin
                 var db = new SQLiteConnection("MyDatabase.db3", SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite);
                 db.CreateTable<T_elements>();
                 db.CreateTable<T_parties>();
+                db.Close();
             }
 
             Application.EnableVisualStyles();
