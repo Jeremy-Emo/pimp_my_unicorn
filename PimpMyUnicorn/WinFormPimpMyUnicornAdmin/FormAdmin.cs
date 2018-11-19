@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormPimpMyUnicorn;
 
 namespace WinFormPimpMyUnicornAdmin
 {
@@ -15,6 +16,13 @@ namespace WinFormPimpMyUnicornAdmin
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btn_create_Click(object sender, EventArgs e)
+        {
+            FormModal settingsForm = new FormModal();
+
+            settingsForm.Show();
         }
     }
 }
