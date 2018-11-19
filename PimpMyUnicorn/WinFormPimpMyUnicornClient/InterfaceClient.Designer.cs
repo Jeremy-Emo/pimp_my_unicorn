@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfaceClient));
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -47,9 +50,6 @@
             this.comboBoxSabot = new System.Windows.Forms.ComboBox();
             this.comboBoxCorne = new System.Windows.Forms.ComboBox();
             this.panelImage = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panelHeader.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,6 +69,28 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1264, 62);
             this.panelHeader.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.HotPink;
+            this.panel5.Location = new System.Drawing.Point(1042, 62);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(222, 100);
+            this.panel5.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(1042, 62);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(222, 100);
+            this.panel4.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(965, 62);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(222, 791);
+            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -238,28 +260,6 @@
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(1264, 921);
             this.panelImage.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(965, 62);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(222, 791);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(1042, 62);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(222, 100);
-            this.panel4.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.HotPink;
-            this.panel5.Location = new System.Drawing.Point(1042, 62);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(222, 100);
-            this.panel5.TabIndex = 0;
             // 
             // panel7
             // 
