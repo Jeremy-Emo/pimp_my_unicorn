@@ -41,5 +41,10 @@ namespace WinFormPimpMyUnicornClient
         {
 
         }
+
+        private void InterfaceClient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
