@@ -102,7 +102,6 @@
             this.label1.Size = new System.Drawing.Size(175, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pimp My Unicorn";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -200,7 +199,6 @@
             this.labelCorne.Size = new System.Drawing.Size(59, 17);
             this.labelCorne.TabIndex = 19;
             this.labelCorne.Text = "Corne : ";
-            this.labelCorne.Click += new System.EventHandler(this.label2_Click_2);
             // 
             // comboBoxQueue
             // 
@@ -218,7 +216,6 @@
             this.buttonCreation.TabIndex = 18;
             this.buttonCreation.Text = "Création";
             this.buttonCreation.UseVisualStyleBackColor = true;
-            this.buttonCreation.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBoxRobe
             // 
@@ -283,7 +280,6 @@
             this.Name = "InterfaceClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pimp My Unicorn ";
-            this.Load += new System.EventHandler(this.InterfaceClient_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panel2.ResumeLayout(false);
