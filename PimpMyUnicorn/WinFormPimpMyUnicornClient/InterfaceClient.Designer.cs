@@ -1,0 +1,273 @@
+﻿namespace WinFormPimpMyUnicornClient
+{
+    partial class InterfaceClient
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelFooter = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBoxQueue = new System.Windows.Forms.ComboBox();
+            this.buttonCreation = new System.Windows.Forms.Button();
+            this.comboBoxRobe = new System.Windows.Forms.ComboBox();
+            this.comboBoxCriniere = new System.Windows.Forms.ComboBox();
+            this.comboBoxSabot = new System.Windows.Forms.ComboBox();
+            this.comboBoxCorne = new System.Windows.Forms.ComboBox();
+            this.panelImage = new System.Windows.Forms.Panel();
+            this.labelCorne = new System.Windows.Forms.Label();
+            this.labelSabot = new System.Windows.Forms.Label();
+            this.labelCriniere = new System.Windows.Forms.Label();
+            this.labelRobe = new System.Windows.Forms.Label();
+            this.labelQueue = new System.Windows.Forms.Label();
+            this.panelHeader.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.Pink;
+            this.panelHeader.Controls.Add(this.label1);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(1362, 62);
+            this.panelHeader.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Fuchsia;
+            this.label1.Location = new System.Drawing.Point(871, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(175, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Pimp My Unicorn";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panelFooter);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 673);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1362, 68);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, -68);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1362, 68);
+            this.panel6.TabIndex = 1;
+            // 
+            // panelFooter
+            // 
+            this.panelFooter.BackColor = System.Drawing.Color.LightPink;
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFooter.Location = new System.Drawing.Point(0, 0);
+            this.panelFooter.Name = "panelFooter";
+            this.panelFooter.Size = new System.Drawing.Size(1362, 68);
+            this.panelFooter.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Violet;
+            this.panel3.Controls.Add(this.labelQueue);
+            this.panel3.Controls.Add(this.labelRobe);
+            this.panel3.Controls.Add(this.labelCriniere);
+            this.panel3.Controls.Add(this.labelSabot);
+            this.panel3.Controls.Add(this.labelCorne);
+            this.panel3.Controls.Add(this.comboBoxQueue);
+            this.panel3.Controls.Add(this.buttonCreation);
+            this.panel3.Controls.Add(this.comboBoxRobe);
+            this.panel3.Controls.Add(this.comboBoxCriniere);
+            this.panel3.Controls.Add(this.comboBoxSabot);
+            this.panel3.Controls.Add(this.comboBoxCorne);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 62);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(294, 611);
+            this.panel3.TabIndex = 2;
+            // 
+            // comboBoxQueue
+            // 
+            this.comboBoxQueue.FormattingEnabled = true;
+            this.comboBoxQueue.Location = new System.Drawing.Point(139, 301);
+            this.comboBoxQueue.Name = "comboBoxQueue";
+            this.comboBoxQueue.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxQueue.TabIndex = 17;
+            // 
+            // buttonCreation
+            // 
+            this.buttonCreation.Location = new System.Drawing.Point(180, 364);
+            this.buttonCreation.Name = "buttonCreation";
+            this.buttonCreation.Size = new System.Drawing.Size(80, 27);
+            this.buttonCreation.TabIndex = 18;
+            this.buttonCreation.Text = "Création";
+            this.buttonCreation.UseVisualStyleBackColor = true;
+            this.buttonCreation.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // comboBoxRobe
+            // 
+            this.comboBoxRobe.FormattingEnabled = true;
+            this.comboBoxRobe.Location = new System.Drawing.Point(139, 241);
+            this.comboBoxRobe.Name = "comboBoxRobe";
+            this.comboBoxRobe.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxRobe.TabIndex = 16;
+            // 
+            // comboBoxCriniere
+            // 
+            this.comboBoxCriniere.FormattingEnabled = true;
+            this.comboBoxCriniere.Location = new System.Drawing.Point(139, 177);
+            this.comboBoxCriniere.Name = "comboBoxCriniere";
+            this.comboBoxCriniere.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCriniere.TabIndex = 15;
+            // 
+            // comboBoxSabot
+            // 
+            this.comboBoxSabot.FormattingEnabled = true;
+            this.comboBoxSabot.Location = new System.Drawing.Point(139, 119);
+            this.comboBoxSabot.Name = "comboBoxSabot";
+            this.comboBoxSabot.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSabot.TabIndex = 14;
+            // 
+            // comboBoxCorne
+            // 
+            this.comboBoxCorne.FormattingEnabled = true;
+            this.comboBoxCorne.Location = new System.Drawing.Point(139, 58);
+            this.comboBoxCorne.Name = "comboBoxCorne";
+            this.comboBoxCorne.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCorne.TabIndex = 13;
+            // 
+            // panelImage
+            // 
+            this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelImage.Location = new System.Drawing.Point(294, 62);
+            this.panelImage.Name = "panelImage";
+            this.panelImage.Size = new System.Drawing.Size(1068, 611);
+            this.panelImage.TabIndex = 3;
+            // 
+            // labelCorne
+            // 
+            this.labelCorne.AutoSize = true;
+            this.labelCorne.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorne.Location = new System.Drawing.Point(33, 62);
+            this.labelCorne.Name = "labelCorne";
+            this.labelCorne.Size = new System.Drawing.Size(59, 17);
+            this.labelCorne.TabIndex = 19;
+            this.labelCorne.Text = "Corne : ";
+            this.labelCorne.Click += new System.EventHandler(this.label2_Click_2);
+            // 
+            // labelSabot
+            // 
+            this.labelSabot.AutoSize = true;
+            this.labelSabot.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSabot.Location = new System.Drawing.Point(33, 123);
+            this.labelSabot.Name = "labelSabot";
+            this.labelSabot.Size = new System.Drawing.Size(58, 17);
+            this.labelSabot.TabIndex = 20;
+            this.labelSabot.Text = "Sabot : ";
+            // 
+            // labelCriniere
+            // 
+            this.labelCriniere.AutoSize = true;
+            this.labelCriniere.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCriniere.Location = new System.Drawing.Point(33, 181);
+            this.labelCriniere.Name = "labelCriniere";
+            this.labelCriniere.Size = new System.Drawing.Size(71, 17);
+            this.labelCriniere.TabIndex = 21;
+            this.labelCriniere.Text = "Crinière : ";
+            // 
+            // labelRobe
+            // 
+            this.labelRobe.AutoSize = true;
+            this.labelRobe.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRobe.Location = new System.Drawing.Point(33, 245);
+            this.labelRobe.Name = "labelRobe";
+            this.labelRobe.Size = new System.Drawing.Size(53, 17);
+            this.labelRobe.TabIndex = 22;
+            this.labelRobe.Text = "Robe : ";
+            // 
+            // labelQueue
+            // 
+            this.labelQueue.AutoSize = true;
+            this.labelQueue.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQueue.Location = new System.Drawing.Point(33, 305);
+            this.labelQueue.Name = "labelQueue";
+            this.labelQueue.Size = new System.Drawing.Size(58, 17);
+            this.labelQueue.TabIndex = 23;
+            this.labelQueue.Text = "Queue :";
+            // 
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.panelImage);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelHeader);
+            this.Name = "Form2";
+            this.Text = "Pimp My Unicorn 2";
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelFooter;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelImage;
+        private System.Windows.Forms.Button buttonCreation;
+        private System.Windows.Forms.ComboBox comboBoxQueue;
+        private System.Windows.Forms.ComboBox comboBoxRobe;
+        private System.Windows.Forms.ComboBox comboBoxCriniere;
+        private System.Windows.Forms.ComboBox comboBoxSabot;
+        private System.Windows.Forms.ComboBox comboBoxCorne;
+        private System.Windows.Forms.Label labelQueue;
+        private System.Windows.Forms.Label labelRobe;
+        private System.Windows.Forms.Label labelCriniere;
+        private System.Windows.Forms.Label labelSabot;
+        private System.Windows.Forms.Label labelCorne;
+    }
+}
