@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SQLite;
 using System.IO;
+using WinFormPimpMyUnicorn;
 
 namespace WinFormPimpMyUnicornAdmin
 {
@@ -26,6 +27,7 @@ namespace WinFormPimpMyUnicornAdmin
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            FileProvider.MonitorDirectory();
             Application.Run(new FormAdmin());
         }
     }
