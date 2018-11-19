@@ -7,11 +7,11 @@ using System.IO;
 
 namespace WinFormPimpMyUnicorn
 {
-    static class FileProvider
+    public static class FileProvider
     {
-        public static void MonitorDirectory(String cs)
+        public static void MonitorDirectory()
         {
-            FileSystemWatcher fsw = new FileSystemWatcher(@"C:\TEMP\LOG", "*.txt");
+            FileSystemWatcher fsw = new FileSystemWatcher(@"C:\TEMP\PIMPMYUNICORN", "*.sql");
             fsw.EnableRaisingEvents = true;
             fsw.Changed += Fsw_Changed;
             //fsw.WaitForChanged(WatcherChangeTypes.All, 3000);
