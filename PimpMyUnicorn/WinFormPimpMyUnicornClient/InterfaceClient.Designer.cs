@@ -46,21 +46,19 @@
             this.comboBoxSabot = new System.Windows.Forms.ComboBox();
             this.comboBoxCorne = new System.Windows.Forms.ComboBox();
             this.panelImage = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelHeader.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panelImage.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.Pink;
+            this.panelHeader.BackColor = System.Drawing.Color.Violet;
             this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1362, 62);
+            this.panelHeader.Size = new System.Drawing.Size(1264, 62);
             this.panelHeader.TabIndex = 0;
             // 
             // label1
@@ -68,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Fuchsia;
-            this.label1.Location = new System.Drawing.Point(871, 19);
+            this.label1.Location = new System.Drawing.Point(633, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 25);
             this.label1.TabIndex = 0;
@@ -80,9 +78,9 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panelFooter);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 673);
+            this.panel2.Location = new System.Drawing.Point(0, 853);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1362, 68);
+            this.panel2.Size = new System.Drawing.Size(1264, 68);
             this.panel2.TabIndex = 1;
             // 
             // panel6
@@ -90,21 +88,21 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(0, -68);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1362, 68);
+            this.panel6.Size = new System.Drawing.Size(1264, 68);
             this.panel6.TabIndex = 1;
             // 
             // panelFooter
             // 
-            this.panelFooter.BackColor = System.Drawing.Color.LightPink;
+            this.panelFooter.BackColor = System.Drawing.Color.Violet;
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelFooter.Location = new System.Drawing.Point(0, 0);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1362, 68);
+            this.panelFooter.Size = new System.Drawing.Size(1264, 68);
             this.panelFooter.TabIndex = 0;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Violet;
+            this.panel3.BackColor = System.Drawing.Color.HotPink;
             this.panel3.Controls.Add(this.labelQueue);
             this.panel3.Controls.Add(this.labelRobe);
             this.panel3.Controls.Add(this.labelCriniere);
@@ -119,7 +117,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 62);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(294, 611);
+            this.panel3.Size = new System.Drawing.Size(294, 791);
             this.panel3.TabIndex = 2;
             // 
             // labelQueue
@@ -225,38 +223,31 @@
             // 
             // panelImage
             // 
-            this.panelImage.Controls.Add(this.panel1);
             this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelImage.Location = new System.Drawing.Point(294, 62);
             this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(1068, 611);
+            this.panelImage.Size = new System.Drawing.Size(970, 791);
             this.panelImage.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Violet;
-            this.panel1.Location = new System.Drawing.Point(990, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(78, 611);
-            this.panel1.TabIndex = 0;
             // 
             // InterfaceClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1264, 921);
             this.Controls.Add(this.panelImage);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "InterfaceClient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pimp My Unicorn 2";
+            this.Load += new System.EventHandler(this.InterfaceClient_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panelImage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -281,6 +272,5 @@
         private System.Windows.Forms.Label labelCriniere;
         private System.Windows.Forms.Label labelSabot;
         private System.Windows.Forms.Label labelCorne;
-        private System.Windows.Forms.Panel panel1;
     }
 }
