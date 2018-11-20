@@ -51,7 +51,6 @@ namespace WinFormPimpMyUnicornAdmin
                 conn.Close();
             }
             
-            Console.WriteLine(Crud.getAllParties());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             FileProvider.MonitorDirectory();

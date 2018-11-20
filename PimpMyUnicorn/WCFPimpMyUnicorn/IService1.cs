@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WCFPimpMyUnicorn.DTO;
 
 namespace WCFPimpMyUnicorn
 {
@@ -15,6 +16,12 @@ namespace WCFPimpMyUnicorn
 
         [OperationContract]
         bool UpdateDatabase(List<string> queries);
+
+        [OperationContract]
+        List<PartiesDTO> GetParties();
+
+        [OperationContract]
+        List<ElementsDTO> GetElements();
 
     }
 }
