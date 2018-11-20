@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCFPimpMyUnicorn.DTO" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_UpdateDatabase_InputMessage">
@@ -13,16 +14,54 @@
   <wsdl:message name="IService1_UpdateDatabase_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateDatabaseResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetParties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParties" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetParties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetElements_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetElements" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetElements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetElementsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="UpdateDatabase">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDatabase" message="tns:IService1_UpdateDatabase_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDatabaseResponse" message="tns:IService1_UpdateDatabase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParties">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetParties" message="tns:IService1_GetParties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPartiesResponse" message="tns:IService1_GetParties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetElements">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetElements" message="tns:IService1_GetElements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetElementsResponse" message="tns:IService1_GetElements_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="UpdateDatabase">
       <soap:operation soapAction="http://tempuri.org/IService1/UpdateDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParties">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetParties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetElements">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetElements" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

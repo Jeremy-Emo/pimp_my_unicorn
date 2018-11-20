@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/WCFPimpMyUnicorn.DTO" />
   <xs:element name="UpdateDatabase">
     <xs:complexType>
       <xs:sequence>
@@ -12,6 +13,30 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="UpdateDatabaseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParties">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFPimpMyUnicorn.DTO" minOccurs="0" name="GetPartiesResult" nillable="true" type="q2:ArrayOfPartiesDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElements">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElementsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFPimpMyUnicorn.DTO" minOccurs="0" name="GetElementsResult" nillable="true" type="q3:ArrayOfElementsDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
