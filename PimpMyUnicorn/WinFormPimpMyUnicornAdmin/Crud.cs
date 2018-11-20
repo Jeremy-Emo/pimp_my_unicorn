@@ -22,7 +22,6 @@ namespace WinFormPimpMyUnicorn
             string sql = "SELECT * from t_parties";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
-            conn.Close();
             List<T_parties> parties = new List<T_parties>();
             foreach (DataRow row in reader)
             {
@@ -31,6 +30,7 @@ namespace WinFormPimpMyUnicorn
                 p.partieLibelle = row["partieLibelle"].ToString();
                 parties.Add(p);
             }
+            conn.Close();
             return parties;
         }
 
@@ -41,7 +41,6 @@ namespace WinFormPimpMyUnicorn
             string sql = "SELECT * from t_elements";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
-            conn.Close();
             List<T_elements> elements = new List<T_elements>();
             foreach (DataRow row in reader)
             {
@@ -52,6 +51,7 @@ namespace WinFormPimpMyUnicorn
                 e.partie_id = Convert.ToInt32(row["partie_id"]);
                 elements.Add(e);
             }
+            conn.Close();
             return elements;
         }
 
