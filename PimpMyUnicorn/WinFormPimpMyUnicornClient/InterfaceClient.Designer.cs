@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfaceClient));
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.pictureBoxRight = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLeft = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -42,14 +44,12 @@
             this.panelRight = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.saveUnicorn = new System.Windows.Forms.Button();
-            this.pictureBoxLeft = new System.Windows.Forms.PictureBox();
-            this.pictureBoxRight = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelImage.SuspendLayout();
             this.panelLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -67,6 +67,24 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1264, 62);
             this.panelHeader.TabIndex = 0;
+            // 
+            // pictureBoxRight
+            // 
+            this.pictureBoxRight.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRight.Image")));
+            this.pictureBoxRight.Location = new System.Drawing.Point(1204, 6);
+            this.pictureBoxRight.Name = "pictureBoxRight";
+            this.pictureBoxRight.Size = new System.Drawing.Size(48, 50);
+            this.pictureBoxRight.TabIndex = 27;
+            this.pictureBoxRight.TabStop = false;
+            // 
+            // pictureBoxLeft
+            // 
+            this.pictureBoxLeft.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLeft.Image")));
+            this.pictureBoxLeft.Location = new System.Drawing.Point(12, 6);
+            this.pictureBoxLeft.Name = "pictureBoxLeft";
+            this.pictureBoxLeft.Size = new System.Drawing.Size(48, 50);
+            this.pictureBoxLeft.TabIndex = 26;
+            this.pictureBoxLeft.TabStop = false;
             // 
             // panel3
             // 
@@ -173,24 +191,6 @@
             this.saveUnicorn.UseVisualStyleBackColor = false;
             this.saveUnicorn.Click += new System.EventHandler(this.saveUnicorn_Click);
             // 
-            // pictureBoxLeft
-            // 
-            this.pictureBoxLeft.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLeft.Image")));
-            this.pictureBoxLeft.Location = new System.Drawing.Point(12, 6);
-            this.pictureBoxLeft.Name = "pictureBoxLeft";
-            this.pictureBoxLeft.Size = new System.Drawing.Size(48, 50);
-            this.pictureBoxLeft.TabIndex = 26;
-            this.pictureBoxLeft.TabStop = false;
-            // 
-            // pictureBoxRight
-            // 
-            this.pictureBoxRight.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRight.Image")));
-            this.pictureBoxRight.Location = new System.Drawing.Point(1204, 6);
-            this.pictureBoxRight.Name = "pictureBoxRight";
-            this.pictureBoxRight.Size = new System.Drawing.Size(48, 50);
-            this.pictureBoxRight.TabIndex = 27;
-            this.pictureBoxRight.TabStop = false;
-            // 
             // InterfaceClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,11 +207,11 @@
             this.Text = "Pimp My Unicorn ";
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panelImage.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -64,13 +64,13 @@ namespace WinFormPimpMyUnicornClient
                 int turn = 1;
                 foreach(PartiesDTO partie in _parties)
                 {
-                    Dictionary<int, string> thisComboBox = new Dictionary<int, string>
+                    Dictionary<int, string> thisComboBoxValue = new Dictionary<int, string>
                     {
                         { -1, "Choisissez..." }
                     };
                     Dictionary <int, string> elements = _elements.Where(el => el.PartieID == partie.ID).ToDictionary(el => el.ID, el => el.Libelle);
                     foreach(KeyValuePair<int,string> value in elements)
-                    { thisComboBox.Add(value.Key, value.Value); };
+                    { thisComboBoxValue.Add(value.Key, value.Value); };
 
                     Label thisLabel = new Label
                     {
@@ -82,17 +82,20 @@ namespace WinFormPimpMyUnicornClient
                     };
                     thisLabel.Width = TextRenderer.MeasureText(thisLabel.Text, thisLabel.Font).Width;
 
+                    ComboBox thisComboBox = new ComboBox
+                    {
+                        Name = "comboBoxPartie" + turn,
+                        Location = new Point(90, 100 + 50 * turn),
+                        DataSource = new BindingSource(thisComboBoxValue, null),
+                        DisplayMember = "Value",
+                        ValueMember = "Key"
+                    };
+                    thisComboBox.SelectedIndexChanged += new EventHandler(comboBoxChanged);
+
                     Controls.AddRange(new Control[]
                     {
                         thisLabel,
-                        new ComboBox
-                        {
-                            Name = "comboBoxPartie" + turn,
-                            Location = new Point(90, 100 + 50 * turn),
-                            DataSource = new BindingSource(thisComboBox, null),
-                            DisplayMember = "Value",
-                            ValueMember = "Key"
-                        },
+                        thisComboBox,
                         new PictureBox
                         {
                             Name = "pictureBoxPartie" + turn,
@@ -120,6 +123,18 @@ namespace WinFormPimpMyUnicornClient
         private void saveUnicorn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxChanged(object sender, EventArgs e)
+        {
+            ComboBox thisCombobox = (ComboBox)sender;
+            int ID = thisCombobox.SelectedIndex;
+            char number = thisCombobox.Name[thisCombobox.Name.Length - 1];
+            PictureBox thisPictureBox = (PictureBox)Controls["pictureBoxPartie" + number];
+            if (ID == -1)
+                thisPictureBox.Image = null;
+            else
+                thisPictureBox.Image = DisplayBase64Picture(_elements.Find(x => x.PartieID == ID).Image);
         }
     }
 }
