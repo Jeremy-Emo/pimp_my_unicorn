@@ -128,7 +128,7 @@ namespace WinFormPimpMyUnicornClient
         private void comboBoxChanged(object sender, EventArgs e)
         {
             ComboBox thisCombobox = (ComboBox)sender;
-            int ID = thisCombobox.SelectedIndex;
+            int ID = Convert.ToInt32(thisCombobox.SelectedValue);
             char number = thisCombobox.Name[thisCombobox.Name.Length - 1];
             PictureBox thisPictureBox = (PictureBox)Controls["pictureBoxPartie" + number];
             if (ID == -1)
