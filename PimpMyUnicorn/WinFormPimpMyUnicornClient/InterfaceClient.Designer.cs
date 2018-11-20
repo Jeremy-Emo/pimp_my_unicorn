@@ -123,10 +123,12 @@
             // panelImage
             // 
             this.panelImage.BackColor = System.Drawing.Color.Transparent;
+            this.panelImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelImage.Location = new System.Drawing.Point(225, 65);
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(814, 791);
             this.panelImage.TabIndex = 3;
+            this.panelImage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelImage_Paint);
             // 
             // InterfaceClient
             // 

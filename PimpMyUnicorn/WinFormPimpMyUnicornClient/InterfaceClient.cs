@@ -137,5 +137,10 @@ namespace WinFormPimpMyUnicornClient
                 thisPictureBox.Image = DisplayBase64Picture(_elements.Find(x => x.ID == ID).Image);
             }
         }
+
+        private void panelImage_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
