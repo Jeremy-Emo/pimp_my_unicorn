@@ -11,27 +11,40 @@ namespace WinFormPimpMyUnicorn
     {
         public static void MonitorDirectory()
         {
-            FileSystemWatcher fsw = new FileSystemWatcher(@"C:\TEMP\PIMPMYUNICORN", "*.sql");
+            
+            if (!Directory.Exists(Settings1.Default.path_to_folder)) Directory.CreateDirectory(Settings1.Default.path_to_folder);
+            FileSystemWatcher fsw = new FileSystemWatcher(Settings1.Default.path_to_folder, "*.sql");
             fsw.EnableRaisingEvents = true;
             fsw.Changed += Fsw_Changed;
-            //fsw.WaitForChanged(WatcherChangeTypes.All, 3000);
+            
         }
 
         private static void Fsw_Changed(object sender, FileSystemEventArgs e)
         {
             string path = e.FullPath;
 
-            StreamReader sr = new StreamReader(path, Encoding.Default);
-
-            List<string> contenu = new List<string>();
-            while (!sr.EndOfStream)
+            try
             {
-                contenu.Add(sr.ReadLine());
-            }
-            sr.Close();
+                StreamReader sr = new StreamReader(path, Encoding.Default);
 
-            WCFPimpMyUnicorn.Service1Client serviceClient = new WCFPimpMyUnicorn.Service1Client();
-            bool success = serviceClient.UpdateDatabase(contenu.ToArray());
+                List<string> contenu = new List<string>();
+                while (!sr.EndOfStream)
+                {
+                    contenu.Add(sr.ReadLine());
+                }
+                sr.Close();
+
+                WCFPimpMyUnicorn.Service1Client serviceClient = new WCFPimpMyUnicorn.Service1Client();
+                bool success = serviceClient.UpdateDatabase(contenu.ToArray());
+
+                if (success) File.Delete(path);
+
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
     }
 }

@@ -44,6 +44,8 @@ namespace WinFormPimpMyUnicorn
 
                 display_image.Image = DisplayBase64Picture(base64);
 
+                name_img.Text = openFileDialog1.SafeFileName;
+
             }
 
         }
