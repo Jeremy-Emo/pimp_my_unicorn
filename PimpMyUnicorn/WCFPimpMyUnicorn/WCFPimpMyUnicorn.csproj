@@ -49,6 +49,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ElementsDTO.cs" />
+    <Compile Include="DTO\PartiesDTO.cs" />
     <Compile Include="IService1.cs" />
     <Compile Include="MySQLProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

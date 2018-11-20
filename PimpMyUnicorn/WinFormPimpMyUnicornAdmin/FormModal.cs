@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 
 
+
 namespace WinFormPimpMyUnicorn
 {
     public partial class FormModal : Form
@@ -17,6 +18,15 @@ namespace WinFormPimpMyUnicorn
         public FormModal()
         {
             InitializeComponent();
+
+            var _parties = Crud.getAllParties();
+
+            Dictionary<int, string> parties = _parties.ToDictionary(p => p.Id_partie, p => p.partieLibelle);
+           
+            select_partie.DataSource = new BindingSource(parties,null);
+            select_partie.DisplayMember = "Value";
+            select_partie.ValueMember = "Key";
+
         }
 
         private static Image DisplayBase64Picture(string base64)

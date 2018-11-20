@@ -26,6 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="4f78ebff-a734-41f0-967f-cac53d529640" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFPimpMyUnicorn/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="46c4556f-22a9-4f1d-90c1-727461361487" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFPimpMyUnicorn/Service1/mex" />
     <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="5fdd9f29-3686-4376-ace2-d6d263bb998a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFPimpMyUnicorn/Service1/mex" />
+    <MetadataFile FileName="WCFPimpMyUnicorn.DTO.xsd" MetadataType="Schema" ID="aea28fe0-29f4-4582-af71-0c493f6ba7ae" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFPimpMyUnicorn/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
