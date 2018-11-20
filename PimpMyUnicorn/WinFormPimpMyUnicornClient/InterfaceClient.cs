@@ -116,7 +116,10 @@ namespace WinFormPimpMyUnicornClient
 
         private void saveUnicorn_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\program files");
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            saveFileDialog1.Title = "Save an Image File";
+            saveFileDialog1.ShowDialog();
         }
 
         private void comboBoxChanged(object sender, EventArgs e)
