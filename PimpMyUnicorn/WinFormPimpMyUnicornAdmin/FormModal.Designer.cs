@@ -37,6 +37,7 @@
             this.display_image = new System.Windows.Forms.PictureBox();
             this.name_img = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.admin_titre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.display_image)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +99,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.admin_titre);
             this.panel1.Controls.Add(this.select_partie);
             this.panel1.Controls.Add(this.name_img);
             this.panel1.Controls.Add(this.name_element);
@@ -107,6 +109,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 581);
             this.panel1.TabIndex = 7;
+            // 
+            // admin_titre
+            // 
+            this.admin_titre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admin_titre.Location = new System.Drawing.Point(52, 36);
+            this.admin_titre.Name = "admin_titre";
+            this.admin_titre.Size = new System.Drawing.Size(140, 104);
+            this.admin_titre.TabIndex = 7;
+            this.admin_titre.Text = "Ajouter un élément";
+            this.admin_titre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormModal
             // 
@@ -137,5 +149,6 @@
         private System.Windows.Forms.PictureBox display_image;
         private System.Windows.Forms.Label name_img;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label admin_titre;
     }
 }
