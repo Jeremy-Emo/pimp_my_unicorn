@@ -41,9 +41,11 @@
             this.panelImage = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.saveUnicorn = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelImage.SuspendLayout();
+            this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -147,11 +149,23 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.HotPink;
+            this.panelLeft.Controls.Add(this.saveUnicorn);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 62);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(222, 791);
             this.panelLeft.TabIndex = 2;
+            // 
+            // saveUnicorn
+            // 
+            this.saveUnicorn.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.saveUnicorn.Location = new System.Drawing.Point(3, 33);
+            this.saveUnicorn.Name = "saveUnicorn";
+            this.saveUnicorn.Size = new System.Drawing.Size(216, 23);
+            this.saveUnicorn.TabIndex = 0;
+            this.saveUnicorn.Text = "Enregistrer ma Lincorne";
+            this.saveUnicorn.UseVisualStyleBackColor = false;
+            this.saveUnicorn.Click += new System.EventHandler(this.saveUnicorn_Click);
             // 
             // InterfaceClient
             // 
@@ -171,6 +185,7 @@
             this.panelHeader.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panelImage.ResumeLayout(false);
+            this.panelLeft.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,5 +204,6 @@
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Button saveUnicorn;
     }
 }

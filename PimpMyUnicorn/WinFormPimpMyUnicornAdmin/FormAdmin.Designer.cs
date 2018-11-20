@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.table_element = new System.Windows.Forms.DataGridView();
             this.btn_create = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.table_element)).BeginInit();
@@ -36,9 +37,9 @@
             // table_element
             // 
             this.table_element.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table_element.Location = new System.Drawing.Point(109, 153);
+            this.table_element.Location = new System.Drawing.Point(12, 168);
             this.table_element.Name = "table_element";
-            this.table_element.Size = new System.Drawing.Size(969, 399);
+            this.table_element.Size = new System.Drawing.Size(1220, 741);
             this.table_element.TabIndex = 0;
             // 
             // btn_create
@@ -51,14 +52,17 @@
             this.btn_create.UseVisualStyleBackColor = true;
             this.btn_create.Click += new System.EventHandler(this.btn_create_Click);
             // 
-            // Form1
+            // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 573);
+            this.ClientSize = new System.Drawing.Size(1244, 921);
             this.Controls.Add(this.btn_create);
             this.Controls.Add(this.table_element);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.table_element)).EndInit();
             this.ResumeLayout(false);

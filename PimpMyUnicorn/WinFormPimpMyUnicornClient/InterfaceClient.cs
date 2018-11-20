@@ -98,16 +98,9 @@ namespace WinFormPimpMyUnicornClient
                     turn++;
                 }
 
-                Button saveUnicorn = new Button
-                {
-                    Name = "btnEnregistrer",
-                    Text = "Enregistrer ma licorne",
-                    Location = new Point(10, 100 + 50 * turn),
-                };
-                saveUnicorn.Width = Convert.ToInt32(TextRenderer.MeasureText(saveUnicorn.Text, saveUnicorn.Font).Width * 1.1);
-                Controls.Add(saveUnicorn);
-
                 InitializeComponent();
+
+                saveUnicorn.Location = new Point(3, 25 + 50 * turn);
             }
         }
 
@@ -118,7 +111,7 @@ namespace WinFormPimpMyUnicornClient
             return newPicture;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void saveUnicorn_Click(object sender, EventArgs e)
         {
 
         }
