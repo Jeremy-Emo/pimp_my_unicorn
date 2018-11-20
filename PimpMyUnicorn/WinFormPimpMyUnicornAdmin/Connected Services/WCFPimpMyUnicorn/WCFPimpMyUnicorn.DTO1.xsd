@@ -7,7 +7,10 @@
   </xs:complexType>
   <xs:element name="ArrayOfPartiesDTO" nillable="true" type="tns:ArrayOfPartiesDTO" />
   <xs:complexType name="PartiesDTO">
-    <xs:sequence />
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string" />
+    </xs:sequence>
   </xs:complexType>
   <xs:element name="PartiesDTO" nillable="true" type="tns:PartiesDTO" />
   <xs:complexType name="ArrayOfElementsDTO">
@@ -17,7 +20,12 @@
   </xs:complexType>
   <xs:element name="ArrayOfElementsDTO" nillable="true" type="tns:ArrayOfElementsDTO" />
   <xs:complexType name="ElementsDTO">
-    <xs:sequence />
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartieID" type="xs:int" />
+    </xs:sequence>
   </xs:complexType>
   <xs:element name="ElementsDTO" nillable="true" type="tns:ElementsDTO" />
 </xs:schema>
