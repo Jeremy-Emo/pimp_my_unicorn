@@ -22,8 +22,6 @@ namespace WinFormPimpMyUnicornClient
 
         public InterfaceClient()
         {
-            InitializeComponent();
-
             using (MySqlConnection cn = new MySqlConnection(_connString))
             {
                 cn.Open();
@@ -60,6 +58,56 @@ namespace WinFormPimpMyUnicornClient
                         }
                     }
                 }
+                _elements = _elements.OrderBy(x => x.ID).ToList();
+
+                
+                int turn = 1;
+                foreach(PartiesDTO partie in _parties)
+                {
+                    Dictionary<int, string> thisComboBox = new Dictionary<int, string>
+                    {
+                        { -1, "Choisissez..." }
+                    };
+                    Dictionary <int, string> elements = _elements.Where(el => el.PartieID == partie.ID).ToDictionary(el => el.ID, el => el.Libelle);
+                    foreach(KeyValuePair<int,string> value in elements)
+                    { thisComboBox.Add(value.Key, value.Value); };
+
+                    Label thisLabel = new Label
+                    {
+                        Name = "labelPartie" + turn,
+                        Location = new Point(10, 100 + 50 * turn),
+                        BackColor = Color.HotPink,
+                        Text = partie.Libelle + ":",
+                        Font = new Font("Arial Black", 9)
+                    };
+                    thisLabel.Width = TextRenderer.MeasureText(thisLabel.Text, thisLabel.Font).Width;
+
+                    Controls.AddRange(new Control[]
+                    {
+                        thisLabel,
+                        new ComboBox
+                        {
+                            Name = "comboBoxPartie" + turn,
+                            Location = new Point(90, 100 + 50 * turn),
+                            DataSource = new BindingSource(thisComboBox, null),
+                            DisplayMember = "Value",
+                            ValueMember = "Key"
+                        }
+                    });
+
+                    turn++;
+                }
+
+                Button saveUnicorn = new Button
+                {
+                    Name = "btnEnregistrer",
+                    Text = "Enregistrer ma licorne",
+                    Location = new Point(10, 100 + 50 * turn),
+                };
+                saveUnicorn.Width = Convert.ToInt32(TextRenderer.MeasureText(saveUnicorn.Text, saveUnicorn.Font).Width * 1.1);
+                Controls.Add(saveUnicorn);
+
+                InitializeComponent();
             }
         }
 
