@@ -122,7 +122,7 @@ namespace WinFormPimpMyUnicornClient
         private void saveUnicorn_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "JPeg Image|*.jpg";
+            saveFileDialog1.Filter = ".png|*.png";
             saveFileDialog1.Title = "Sauvegarder votre Licorne";
             DialogResult dialog_result = saveFileDialog1.ShowDialog();
             if (dialog_result == DialogResult.OK)
