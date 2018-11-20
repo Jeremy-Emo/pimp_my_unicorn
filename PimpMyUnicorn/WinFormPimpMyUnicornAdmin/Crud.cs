@@ -43,13 +43,13 @@ namespace WinFormPimpMyUnicorn
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
             List<T_elements> elements = new List<T_elements>();
-            foreach (DataRow row in reader)
+            while (reader.Read())
             {
                 T_elements e = new T_elements();
-                e.Id_element = Convert.ToInt32(row["Id_element"]);
-                e.elementLibelle = row["elementLibelle"].ToString();
-                e.elementsImg = row["elementsImg"].ToString();
-                e.partie_id = Convert.ToInt32(row["partie_id"]);
+                e.Id_element = Convert.ToInt32(reader.GetValue(0));
+                e.elementLibelle = reader.GetValue(1).ToString();
+                e.elementsImg = reader.GetValue(2).ToString();
+                e.partie_id = Convert.ToInt32(reader.GetValue(3));
                 elements.Add(e);
             }
             conn.Close();
