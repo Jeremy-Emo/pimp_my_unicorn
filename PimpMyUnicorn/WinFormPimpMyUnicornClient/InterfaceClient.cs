@@ -59,6 +59,9 @@ namespace WinFormPimpMyUnicornClient
 
 
                 InitializeComponent();
+                /*SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+                TransparencyKey = Color.Black;*/
+
 
                 int turn = 1;
                 foreach(PartiesDTO partie in _parties)
@@ -91,13 +94,13 @@ namespace WinFormPimpMyUnicornClient
                     };
                     thisComboBox.SelectedIndexChanged += new EventHandler(comboBoxChanged);
 
-                    panelImage.Controls.Add(new PictureBox
+                    PictureBox thisPictureBox = new PictureBox
                     {
                         Name = "pictureBoxPartie" + turn,
                         Location = new Point(0, 0),
                         Size = new Size(823, 791),
                         BackColor = Color.Transparent
-                    });
+                    };
                     panelLeft.Controls.AddRange(new Control[] { thisLabel, thisComboBox });
 
                     turn++;
@@ -110,6 +113,8 @@ namespace WinFormPimpMyUnicornClient
         private static Image DisplayBase64Picture(string base64)
         {
             Image newPicture;
+            if (string.IsNullOrEmpty(base64))
+                base64 = "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
             using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(base64))) { newPicture = Image.FromStream(ms); }
             return newPicture;
         }
@@ -124,18 +129,38 @@ namespace WinFormPimpMyUnicornClient
 
         private void comboBoxChanged(object sender, EventArgs e)
         {
-            ComboBox thisCombobox = (ComboBox)sender;
-            int ID = Convert.ToInt32(thisCombobox.SelectedValue);
-            char number = thisCombobox.Name[thisCombobox.Name.Length - 1];
-            PictureBox thisPictureBox = (PictureBox)panelImage.Controls["pictureBoxPartie" + number];
-            if (ID == -1)
+            List<ComboBox> comboboxes = panelLeft.Controls.OfType<ComboBox>().ToList();
+            List<Image> images = new List<Image>();
+            foreach(ComboBox cb in comboboxes)
             {
-                thisPictureBox.Image = null;
+                int ID = Convert.ToInt32(cb.SelectedValue);
+                if(ID != -1)
+                    images.Add(DisplayBase64Picture(_elements.Find(x => x.ID == ID).Image));
             }
-            else
+            pictureBoxMain.Image = CombineAndResizeTwoImages(images, pictureBoxMain.Width, pictureBoxMain.Height);
+        }
+
+        private Bitmap CombineAndResizeTwoImages(List<Image> images, int width, int height)
+        {
+            //a holder for the result
+            Bitmap result = new Bitmap(width, height);
+
+            //use a graphics object to draw the resized image into the bitmap
+            using (Graphics graphics = Graphics.FromImage(result))
             {
-                thisPictureBox.Image = DisplayBase64Picture(_elements.Find(x => x.ID == ID).Image);
+                //set the resize quality modes to high quality
+                graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                //draw the images into the target bitmap
+                foreach(Image img in images)
+                {
+                    graphics.DrawImage(img, 0, 0, img.Width, img.Height);
+                }
             }
+
+            //return the resulting bitmap
+            return result;
         }
 
         private void panelImage_Paint(object sender, PaintEventArgs e)

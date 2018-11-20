@@ -37,11 +37,12 @@
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.saveUnicorn = new System.Windows.Forms.Button();
-            this.panelImage = new System.Windows.Forms.Panel();
+            this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
             this.panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -120,22 +121,20 @@
             this.saveUnicorn.UseVisualStyleBackColor = false;
             this.saveUnicorn.Click += new System.EventHandler(this.saveUnicorn_Click);
             // 
-            // panelImage
+            // pictureBoxMain
             // 
-            this.panelImage.BackColor = System.Drawing.Color.Transparent;
-            this.panelImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelImage.Location = new System.Drawing.Point(225, 65);
-            this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(814, 791);
-            this.panelImage.TabIndex = 3;
-            this.panelImage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelImage_Paint);
+            this.pictureBoxMain.Location = new System.Drawing.Point(225, 65);
+            this.pictureBoxMain.Name = "pictureBoxMain";
+            this.pictureBoxMain.Size = new System.Drawing.Size(814, 791);
+            this.pictureBoxMain.TabIndex = 3;
+            this.pictureBoxMain.TabStop = false;
             // 
             // InterfaceClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 921);
-            this.Controls.Add(this.panelImage);
+            this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelLeft);
@@ -150,6 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).EndInit();
             this.panelLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,6 +164,6 @@
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Button saveUnicorn;
-        private System.Windows.Forms.Panel panelImage;
+        private System.Windows.Forms.PictureBox pictureBoxMain;
     }
 }
