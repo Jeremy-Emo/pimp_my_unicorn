@@ -15,7 +15,7 @@ namespace WinFormPimpMyUnicorn
         private static string _db = "Data Source=MyDatabase.db3;Version=3;";
         private static string _path = Settings1.Default.path_to_folder;
         
-        public List<T_parties> getAllParties()
+        public static List<T_parties> getAllParties()
         {
             SQLiteConnection conn = new SQLiteConnection(_db);
             conn.Open();
@@ -34,7 +34,7 @@ namespace WinFormPimpMyUnicorn
             return parties;
         }
 
-        public List<T_elements> getAllElements()
+        public static List<T_elements> getAllElements()
         {
             SQLiteConnection conn = new SQLiteConnection(_db);
             conn.Open();
