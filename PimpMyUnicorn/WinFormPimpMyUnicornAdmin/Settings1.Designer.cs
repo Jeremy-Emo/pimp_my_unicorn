@@ -31,5 +31,23 @@ namespace WinFormPimpMyUnicorn {
                 return ((string)(this["path_to_folder"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int wcf_timer {
+            get {
+                return ((int)(this["wcf_timer"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sql")]
+        public string file_extension {
+            get {
+                return ((string)(this["file_extension"]));
+            }
+        }
     }
 }
