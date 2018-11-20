@@ -42,15 +42,21 @@
             this.panelRight = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.saveUnicorn = new System.Windows.Forms.Button();
+            this.pictureBoxLeft = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRight = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelImage.SuspendLayout();
             this.panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.Violet;
+            this.panelHeader.Controls.Add(this.pictureBoxRight);
+            this.panelHeader.Controls.Add(this.pictureBoxLeft);
             this.panelHeader.Controls.Add(this.panel3);
             this.panelHeader.Controls.Add(this.panel5);
             this.panelHeader.Controls.Add(this.panel4);
@@ -167,6 +173,24 @@
             this.saveUnicorn.UseVisualStyleBackColor = false;
             this.saveUnicorn.Click += new System.EventHandler(this.saveUnicorn_Click);
             // 
+            // pictureBoxLeft
+            // 
+            this.pictureBoxLeft.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLeft.Image")));
+            this.pictureBoxLeft.Location = new System.Drawing.Point(12, 6);
+            this.pictureBoxLeft.Name = "pictureBoxLeft";
+            this.pictureBoxLeft.Size = new System.Drawing.Size(48, 50);
+            this.pictureBoxLeft.TabIndex = 26;
+            this.pictureBoxLeft.TabStop = false;
+            // 
+            // pictureBoxRight
+            // 
+            this.pictureBoxRight.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRight.Image")));
+            this.pictureBoxRight.Location = new System.Drawing.Point(1204, 6);
+            this.pictureBoxRight.Name = "pictureBoxRight";
+            this.pictureBoxRight.Size = new System.Drawing.Size(48, 50);
+            this.pictureBoxRight.TabIndex = 27;
+            this.pictureBoxRight.TabStop = false;
+            // 
             // InterfaceClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +210,8 @@
             this.panel2.ResumeLayout(false);
             this.panelImage.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,5 +231,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Button saveUnicorn;
+        private System.Windows.Forms.PictureBox pictureBoxRight;
+        private System.Windows.Forms.PictureBox pictureBoxLeft;
     }
 }
