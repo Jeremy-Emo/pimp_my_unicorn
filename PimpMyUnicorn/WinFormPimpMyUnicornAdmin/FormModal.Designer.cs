@@ -79,6 +79,7 @@
             this.add_element.TabIndex = 4;
             this.add_element.Text = "Valider";
             this.add_element.UseVisualStyleBackColor = true;
+            this.add_element.Click += new System.EventHandler(this.add_element_Click);
             // 
             // display_image
             // 

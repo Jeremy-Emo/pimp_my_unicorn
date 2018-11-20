@@ -60,5 +60,19 @@ namespace WinFormPimpMyUnicorn
 
         }
 
+        private void add_element_Click(object sender, EventArgs e)
+        {
+            string nomElement = name_element.Text;
+            byte[] byteArrayForImage = new byte[0];
+            using(MemoryStream ms = new MemoryStream())
+            {
+                new Bitmap(display_image.Image).Save(ms, display_image.Image.RawFormat);
+                byteArrayForImage = ms.ToArray();
+            }
+            string image = Convert.ToBase64String(byteArrayForImage);
+            int partieID = Convert.ToInt32(select_partie.SelectedValue);
+
+          
+        }
     }
 }
