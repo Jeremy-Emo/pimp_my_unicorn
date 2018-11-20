@@ -38,15 +38,28 @@ namespace WinFormPimpMyUnicornAdmin
                 ");";
                 SQLiteCommand import2 = new SQLiteCommand(sql2, conn);
                 import2.ExecuteNonQuery();
+                
+                WinFormPimpMyUnicorn.WCFPimpMyUnicorn.Service1Client svc = new WinFormPimpMyUnicorn.WCFPimpMyUnicorn.Service1Client();
+                List<WinFormPimpMyUnicorn.WCFPimpMyUnicorn.PartiesDTO> data = svc.GetParties().ToList();
 
-                string test = "INSERT INTO `t_parties` (`Id_partie`, `partieLibelle`) VALUES" +
-                        "(1, 'Corne')," +
-                        "(2, 'Queue')," +
-                        "(3, 'Sabot')," +
-                        "(4, 'Crinière')," +
-                        "(5, 'Robe'); ";
-                SQLiteCommand import3 = new SQLiteCommand(test, conn);
-                import3.ExecuteNonQuery();
+                foreach(WinFormPimpMyUnicorn.WCFPimpMyUnicorn.PartiesDTO da in data)
+                {
+                    string test = "INSERT INTO `t_parties` (`Id_partie`, `partieLibelle`) VALUES" +
+                            "(" + da.ID + ",'" + da.Libelle + "');";
+                    SQLiteCommand import3 = new SQLiteCommand(test, conn);
+                    import3.ExecuteNonQuery();
+                }
+
+                List<WinFormPimpMyUnicorn.WCFPimpMyUnicorn.ElementsDTO> data2 = svc.GetElements().ToList();
+
+                foreach(WinFormPimpMyUnicorn.WCFPimpMyUnicorn.ElementsDTO da in data2)
+                {
+                    string test = "INSERT INTO `t_elements` (`Id_element`, `elementLibelle`, `elementsImg`, `partie_id`) VALUES" +
+                            "(" + da.ID + ",'" + da.Libelle + "','" + da.Image + "'," + da.PartieID + ");";
+                    SQLiteCommand import4 = new SQLiteCommand(test, conn);
+                    import4.ExecuteNonQuery();
+                }
+
 
                 conn.Close();
             }

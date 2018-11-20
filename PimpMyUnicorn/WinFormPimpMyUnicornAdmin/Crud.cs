@@ -60,7 +60,11 @@ namespace WinFormPimpMyUnicorn
         {
             if (!File.Exists(_path))
             {
-
+                File.Create(_path);
+            }
+            using (StreamWriter sw = File.AppendText(_path))
+            {
+                sw.WriteLine(command);
             }
         }
     }

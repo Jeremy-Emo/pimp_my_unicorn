@@ -170,7 +170,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\licorne1.ico" />
   </ItemGroup>
