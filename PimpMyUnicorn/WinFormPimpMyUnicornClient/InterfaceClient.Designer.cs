@@ -38,6 +38,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.buttonEnregistrer = new System.Windows.Forms.Button();
             this.labelQueue = new System.Windows.Forms.Label();
             this.labelRobe = new System.Windows.Forms.Label();
             this.labelCriniere = new System.Windows.Forms.Label();
@@ -51,16 +52,18 @@
             this.comboBoxCorne = new System.Windows.Forms.ComboBox();
             this.panelImage = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.buttonEnregistrer = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panelImage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.Violet;
+            this.panelHeader.Controls.Add(this.pictureBox1);
             this.panelHeader.Controls.Add(this.panel5);
             this.panelHeader.Controls.Add(this.panel4);
             this.panelHeader.Controls.Add(this.panel1);
@@ -151,6 +154,17 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(222, 791);
             this.panelLeft.TabIndex = 2;
+            // 
+            // buttonEnregistrer
+            // 
+            this.buttonEnregistrer.BackColor = System.Drawing.Color.Lime;
+            this.buttonEnregistrer.Location = new System.Drawing.Point(86, 369);
+            this.buttonEnregistrer.Name = "buttonEnregistrer";
+            this.buttonEnregistrer.Size = new System.Drawing.Size(121, 27);
+            this.buttonEnregistrer.TabIndex = 24;
+            this.buttonEnregistrer.Text = "Enregistrer ma Licorne";
+            this.buttonEnregistrer.UseVisualStyleBackColor = false;
+            this.buttonEnregistrer.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelQueue
             // 
@@ -268,16 +282,15 @@
             this.panelRight.Size = new System.Drawing.Size(222, 791);
             this.panelRight.TabIndex = 0;
             // 
-            // buttonEnregistrer
+            // pictureBox1
             // 
-            this.buttonEnregistrer.BackColor = System.Drawing.Color.Lime;
-            this.buttonEnregistrer.Location = new System.Drawing.Point(86, 369);
-            this.buttonEnregistrer.Name = "buttonEnregistrer";
-            this.buttonEnregistrer.Size = new System.Drawing.Size(121, 27);
-            this.buttonEnregistrer.TabIndex = 24;
-            this.buttonEnregistrer.Text = "Enregistrer ma Licorne";
-            this.buttonEnregistrer.UseVisualStyleBackColor = false;
-            this.buttonEnregistrer.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox1.Image = global::WinFormPimpMyUnicornClient.Properties.Resources.icons8_licorne_50;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 50);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // InterfaceClient
             // 
@@ -299,6 +312,7 @@
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
             this.panelImage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,5 +342,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Button buttonEnregistrer;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

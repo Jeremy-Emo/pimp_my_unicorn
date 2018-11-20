@@ -59,5 +59,15 @@ namespace WinFormPimpMyUnicornClient.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_licorne_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-licorne-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
