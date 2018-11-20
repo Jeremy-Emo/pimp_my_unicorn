@@ -13,21 +13,22 @@ namespace WinFormPimpMyUnicorn
     public class Crud
     {
         private static string _db = "Data Source=MyDatabase.db3;Version=3;";
-        private static string _path = Settings1.Default.path_to_folder;
+        private static string _path = Settings1.Default.path_to_folder + DateTime.Now + "." + Settings1.Default.file_extension;
         
         public static List<T_parties> getAllParties()
         {
             SQLiteConnection conn = new SQLiteConnection(_db);
             conn.Open();
+
             string sql = "SELECT * from t_parties";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
             List<T_parties> parties = new List<T_parties>();
-            foreach (DataRow row in reader)
+            while (reader.Read())
             {
                 T_parties p = new T_parties();
-                p.Id_partie = Convert.ToInt32(row["Id_partie"]);
-                p.partieLibelle = row["partieLibelle"].ToString();
+                p.Id_partie = Convert.ToInt32(reader.GetValue(0));
+                p.partieLibelle = reader.GetValue(1).ToString();
                 parties.Add(p);
             }
             conn.Close();
