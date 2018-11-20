@@ -92,6 +92,12 @@ namespace WinFormPimpMyUnicornClient
                             DataSource = new BindingSource(thisComboBox, null),
                             DisplayMember = "Value",
                             ValueMember = "Key"
+                        },
+                        new PictureBox
+                        {
+                            Name = "pictureBoxPartie" + turn,
+                            Location = new Point(222, 62),
+                            Size = new Size(820, 791)
                         }
                     });
 
