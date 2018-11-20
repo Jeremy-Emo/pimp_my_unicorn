@@ -19,7 +19,7 @@ namespace WinFormPimpMyUnicornAdmin
         {
             if (!File.Exists("MyDatabase.db3"))
             {
-                var db = new SQLiteConnection("MyDatabase.db3", SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite);
+                SQLiteConnection db = new SQLiteConnection("MyDatabase.db3", SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite);
                 db.CreateTable<T_elements>();
                 db.CreateTable<T_parties>();
                 db.Close();
