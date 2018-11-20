@@ -1,14 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormPimpMyUnicornClient.DTO;
 
@@ -60,7 +57,9 @@ namespace WinFormPimpMyUnicornClient
                 }
                 _elements = _elements.OrderBy(x => x.ID).ToList();
 
-                
+
+                InitializeComponent();
+
                 int turn = 1;
                 foreach(PartiesDTO partie in _parties)
                 {
@@ -76,7 +75,7 @@ namespace WinFormPimpMyUnicornClient
                     {
                         Name = "labelPartie" + turn,
                         Location = new Point(10, 100 + 50 * turn),
-                        BackColor = Color.HotPink,
+                        BackColor = Color.Transparent,
                         Text = partie.Libelle + ":",
                         Font = new Font("Arial Black", 9)
                     };
@@ -92,24 +91,19 @@ namespace WinFormPimpMyUnicornClient
                     };
                     thisComboBox.SelectedIndexChanged += new EventHandler(comboBoxChanged);
 
-                    Controls.AddRange(new Control[]
+                    panelImage.Controls.Add(new PictureBox
                     {
-                        thisLabel,
-                        thisComboBox,
-                        new PictureBox
-                        {
-                            Name = "pictureBoxPartie" + turn,
-                            Location = new Point(222, 62),
-                            Size = new Size(820, 791)
-                        }
+                        Name = "pictureBoxPartie" + turn,
+                        Location = new Point(0, 0),
+                        Size = new Size(823, 791),
+                        BackColor = Color.Transparent
                     });
+                    panelLeft.Controls.AddRange(new Control[] { thisLabel, thisComboBox });
 
                     turn++;
                 }
 
-                InitializeComponent();
-
-                saveUnicorn.Location = new Point(3, 25 + 50 * turn);
+                saveUnicorn.Location = new Point(3, 100 + 50 * turn);
             }
         }
 
@@ -130,11 +124,15 @@ namespace WinFormPimpMyUnicornClient
             ComboBox thisCombobox = (ComboBox)sender;
             int ID = Convert.ToInt32(thisCombobox.SelectedValue);
             char number = thisCombobox.Name[thisCombobox.Name.Length - 1];
-            PictureBox thisPictureBox = (PictureBox)Controls["pictureBoxPartie" + number];
+            PictureBox thisPictureBox = (PictureBox)panelImage.Controls["pictureBoxPartie" + number];
             if (ID == -1)
+            {
                 thisPictureBox.Image = null;
+            }
             else
-                thisPictureBox.Image = DisplayBase64Picture(_elements.Find(x => x.PartieID == ID).Image);
+            {
+                thisPictureBox.Image = DisplayBase64Picture(_elements.Find(x => x.ID == ID).Image);
+            }
         }
     }
 }
