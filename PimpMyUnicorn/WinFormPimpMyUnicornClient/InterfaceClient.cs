@@ -121,7 +121,10 @@ namespace WinFormPimpMyUnicornClient
 
         private void saveUnicorn_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\program files");
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "JPeg Image|*.jpg";
+            saveFileDialog1.Title = "Sauvegarder votre Licorne";
+            saveFileDialog1.ShowDialog();
         }
 
         private void comboBoxChanged(object sender, EventArgs e)
@@ -158,6 +161,11 @@ namespace WinFormPimpMyUnicornClient
 
             //return the resulting bitmap
             return result;
+        }
+
+        private void panelImage_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

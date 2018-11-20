@@ -22,6 +22,12 @@ namespace WinFormPimpMyUnicorn.WCFPimpMyUnicorn {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LibelleField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -29,6 +35,32 @@ namespace WinFormPimpMyUnicorn.WCFPimpMyUnicorn {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Libelle {
+            get {
+                return this.LibelleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LibelleField, value) != true)) {
+                    this.LibelleField = value;
+                    this.RaisePropertyChanged("Libelle");
+                }
             }
         }
         
@@ -51,6 +83,18 @@ namespace WinFormPimpMyUnicorn.WCFPimpMyUnicorn {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LibelleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PartieIDField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -58,6 +102,58 @@ namespace WinFormPimpMyUnicorn.WCFPimpMyUnicorn {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Image {
+            get {
+                return this.ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
+                    this.ImageField = value;
+                    this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Libelle {
+            get {
+                return this.LibelleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LibelleField, value) != true)) {
+                    this.LibelleField = value;
+                    this.RaisePropertyChanged("Libelle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PartieID {
+            get {
+                return this.PartieIDField;
+            }
+            set {
+                if ((this.PartieIDField.Equals(value) != true)) {
+                    this.PartieIDField = value;
+                    this.RaisePropertyChanged("PartieID");
+                }
             }
         }
         

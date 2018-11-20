@@ -8,11 +8,14 @@ namespace WCFPimpMyUnicorn.DTO
         private int _id;
         private string _libelle;
 
+        [DataMember]
         public int ID
         {
             get { return _id; }
             set { _id = value; }
         }
+
+        [DataMember]
         public string Libelle
         {
             get { return _libelle; }
