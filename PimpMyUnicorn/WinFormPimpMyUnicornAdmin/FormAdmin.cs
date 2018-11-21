@@ -22,7 +22,12 @@ namespace WinFormPimpMyUnicornAdmin
         {
             FormModal settingsForm = new FormModal();
 
-            settingsForm.Show();
+            if (!settingsForm.IsDisposed)
+            {
+                settingsForm.ShowDialog();
+            }
+
+            
         }
     }
 }
