@@ -13,7 +13,6 @@ namespace WinFormPimpMyUnicorn
     public class Crud
     {
         private static string _db = "Data Source=MyDatabase.db3;Version=3;";
-        private static string _path = Settings1.Default.path_to_folder + DateTime.Now + "." + Settings1.Default.file_extension;
         
         public static List<T_parties> getAllParties()
         {
@@ -56,15 +55,28 @@ namespace WinFormPimpMyUnicorn
             return elements;
         }
 
+        public static void insertElement(string nomElement, string image, int partieID)
+        {
+            SQLiteConnection conn = new SQLiteConnection(_db);
+            conn.Open();
+
+            string sql = "INSERT INTO t_elements (elementLibelle, elementsImg, partie_id) VALUES('"+
+                nomElement + "','" + image + "', " + partieID + ")";
+            SQLiteCommand command = new SQLiteCommand(sql, conn);
+            command.ExecuteNonQuery();
+
+            Crud.registerSQL(sql);
+
+            conn.Close();
+        }
+
         public static void registerSQL(string command)
         {
-            if (!File.Exists(_path))
+            StreamWriter Sw = new StreamWriter(@Settings1.Default.path_to_folder + @"\" + DateTime.Now.Ticks + "." + @Settings1.Default.file_extension, true, Encoding.Default);
+            lock (Sw)
             {
-                File.Create(_path);
-            }
-            using (StreamWriter sw = File.AppendText(_path))
-            {
-                sw.WriteLine(command);
+                Sw.WriteLine(command);
+                Sw.Close();
             }
         }
     }

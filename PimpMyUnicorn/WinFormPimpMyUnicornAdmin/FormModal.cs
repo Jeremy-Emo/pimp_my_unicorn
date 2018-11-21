@@ -71,7 +71,7 @@ namespace WinFormPimpMyUnicorn
             }
             string image = Convert.ToBase64String(byteArrayForImage);
             int partieID = Convert.ToInt32(select_partie.SelectedValue);
-
+            Crud.insertElement(nomElement, image, partieID);
           
         }
     }
