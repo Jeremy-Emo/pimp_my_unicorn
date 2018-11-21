@@ -122,7 +122,6 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-licorne-50.png" />
-    <Content Include="Resources\Base.png" />
     <Content Include="Resources\licorne1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

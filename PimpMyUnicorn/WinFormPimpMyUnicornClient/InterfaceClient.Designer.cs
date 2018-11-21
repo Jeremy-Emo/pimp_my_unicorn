@@ -95,9 +95,9 @@
             this.panelRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelRight.BackColor = System.Drawing.Color.HotPink;
-            this.panelRight.Location = new System.Drawing.Point(1039, 65);
+            this.panelRight.Location = new System.Drawing.Point(1025, 65);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(225, 791);
+            this.panelRight.Size = new System.Drawing.Size(239, 800);
             this.panelRight.TabIndex = 0;
             // 
             // panelFooter
@@ -105,9 +105,9 @@
             this.panelFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFooter.BackColor = System.Drawing.Color.Violet;
-            this.panelFooter.Location = new System.Drawing.Point(0, 856);
+            this.panelFooter.Location = new System.Drawing.Point(0, 865);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1264, 65);
+            this.panelFooter.Size = new System.Drawing.Size(1264, 56);
             this.panelFooter.TabIndex = 0;
             // 
             // panelLeft
@@ -118,7 +118,7 @@
             this.panelLeft.Controls.Add(this.saveUnicorn);
             this.panelLeft.Location = new System.Drawing.Point(0, 65);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(225, 791);
+            this.panelLeft.Size = new System.Drawing.Size(225, 800);
             this.panelLeft.TabIndex = 2;
             // 
             // saveUnicorn
@@ -137,7 +137,7 @@
             this.pictureBoxMain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxMain.Location = new System.Drawing.Point(225, 65);
             this.pictureBoxMain.Name = "pictureBoxMain";
-            this.pictureBoxMain.Size = new System.Drawing.Size(814, 791);
+            this.pictureBoxMain.Size = new System.Drawing.Size(800, 800);
             this.pictureBoxMain.TabIndex = 3;
             this.pictureBoxMain.TabStop = false;
             this.pictureBoxMain.Click += new System.EventHandler(this.pictureBoxMain_Click);
