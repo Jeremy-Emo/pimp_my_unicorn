@@ -70,6 +70,20 @@ namespace WinFormPimpMyUnicorn
             conn.Close();
         }
 
+        public static void deleteElement(int id)
+        {
+            SQLiteConnection conn = new SQLiteConnection(_db);
+            conn.Open();
+
+            string sql = "DELETE FROM t_elements WHERE Id_element = " + id;
+            SQLiteCommand command = new SQLiteCommand(sql, conn);
+            command.ExecuteNonQuery();
+
+            Crud.registerSQL(sql);
+
+            conn.Close();
+        }
+
         public static void registerSQL(string command)
         {
             StreamWriter Sw = new StreamWriter(@Settings1.Default.path_to_folder + @"\" + DateTime.Now.Ticks + "." + @Settings1.Default.file_extension, true, Encoding.Default);
