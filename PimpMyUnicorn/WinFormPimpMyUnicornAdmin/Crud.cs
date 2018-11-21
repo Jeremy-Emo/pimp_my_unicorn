@@ -70,6 +70,23 @@ namespace WinFormPimpMyUnicorn
             conn.Close();
         }
 
+        public static void updateElement(int idElement, string nomElement, string image, int partieID)
+        {
+            SQLiteConnection conn = new SQLiteConnection(_db);
+            conn.Open();
+
+            string sql = "UPDATE t_elements SET elementLibelle='" + nomElement +
+                "', elementsImg='" + image +
+                "', partie_id=" + partieID +
+                " WHERE Id_element=" + idElement;
+            SQLiteCommand command = new SQLiteCommand(sql, conn);
+            command.ExecuteNonQuery();
+
+            Crud.registerSQL(sql);
+
+            conn.Close();
+        }
+
         public static void deleteElement(int id)
         {
             SQLiteConnection conn = new SQLiteConnection(_db);
