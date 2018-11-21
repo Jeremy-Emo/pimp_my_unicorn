@@ -17,12 +17,19 @@ namespace WinFormPimpMyUnicornAdmin
         {
             InitializeComponent();
 
+            List<T_parties> parties = Crud.getAllParties();
+            List<T_elements> elements = Crud.getAllElements();
 
-            table_element.DataSource = new BindingList<T_elements>(Crud.getAllElements());
+            foreach(T_elements element in elements)
+            {
+                element.partieLibelle = parties.Where(x => x.Id_partie == element.partie_id).First().partieLibelle;
+            }
+
+            table_element.DataSource = new BindingList<T_elements>(elements);
 
             table_element.Columns["Id_element"].Visible = false;
             table_element.Columns["elementsImg"].Visible = false;
-
+            table_element.Columns["partie_id"].Visible = false;
 
             DataGridViewButtonColumn dgBtnCol = new DataGridViewButtonColumn
             {

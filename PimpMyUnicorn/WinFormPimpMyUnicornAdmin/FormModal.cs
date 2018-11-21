@@ -14,11 +14,11 @@ namespace WinFormPimpMyUnicorn
 {
     public partial class FormModal : Form
     {
+        private List<T_parties> _parties = Crud.getAllParties();
+
         public FormModal(T_elements thisElement = null)
         {
-
             InitializeComponent();
-            var _parties = Crud.getAllParties();
 
             if (_parties != null && _parties.Count > 0)
             {

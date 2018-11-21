@@ -38,9 +38,9 @@ namespace WinFormPimpMyUnicornAdmin
             // 
             this.table_element.AllowUserToAddRows = false;
             this.table_element.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table_element.Location = new System.Drawing.Point(12, 168);
+            this.table_element.Location = new System.Drawing.Point(225, 123);
             this.table_element.Name = "table_element";
-            this.table_element.Size = new System.Drawing.Size(1220, 741);
+            this.table_element.Size = new System.Drawing.Size(711, 741);
             this.table_element.TabIndex = 0;
             this.table_element.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_element_CellContentClick);
             // 
