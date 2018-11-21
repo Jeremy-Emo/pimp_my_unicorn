@@ -47,6 +47,8 @@
             // 
             // panelHeader
             // 
+            this.panelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHeader.BackColor = System.Drawing.Color.Violet;
             this.panelHeader.Controls.Add(this.pictureBoxRight);
             this.panelHeader.Controls.Add(this.pictureBoxLeft);
@@ -58,6 +60,7 @@
             // 
             // pictureBoxRight
             // 
+            this.pictureBoxRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxRight.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRight.Image")));
             this.pictureBoxRight.Location = new System.Drawing.Point(1204, 6);
             this.pictureBoxRight.Name = "pictureBoxRight";
@@ -67,6 +70,7 @@
             // 
             // pictureBoxLeft
             // 
+            this.pictureBoxLeft.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxLeft.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLeft.Image")));
             this.pictureBoxLeft.Location = new System.Drawing.Point(12, 6);
             this.pictureBoxLeft.Name = "pictureBoxLeft";
@@ -76,6 +80,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Fuchsia;
@@ -87,6 +92,8 @@
             // 
             // panelRight
             // 
+            this.panelRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelRight.BackColor = System.Drawing.Color.HotPink;
             this.panelRight.Location = new System.Drawing.Point(1039, 65);
             this.panelRight.Name = "panelRight";
@@ -95,6 +102,8 @@
             // 
             // panelFooter
             // 
+            this.panelFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFooter.BackColor = System.Drawing.Color.Violet;
             this.panelFooter.Location = new System.Drawing.Point(0, 856);
             this.panelFooter.Name = "panelFooter";
@@ -103,6 +112,8 @@
             // 
             // panelLeft
             // 
+            this.panelLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panelLeft.BackColor = System.Drawing.Color.HotPink;
             this.panelLeft.Controls.Add(this.saveUnicorn);
             this.panelLeft.Location = new System.Drawing.Point(0, 65);
@@ -123,11 +134,13 @@
             // 
             // pictureBoxMain
             // 
+            this.pictureBoxMain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxMain.Location = new System.Drawing.Point(225, 65);
             this.pictureBoxMain.Name = "pictureBoxMain";
             this.pictureBoxMain.Size = new System.Drawing.Size(814, 791);
             this.pictureBoxMain.TabIndex = 3;
             this.pictureBoxMain.TabStop = false;
+            this.pictureBoxMain.Click += new System.EventHandler(this.pictureBoxMain_Click);
             // 
             // InterfaceClient
             // 
@@ -139,7 +152,7 @@
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InterfaceClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

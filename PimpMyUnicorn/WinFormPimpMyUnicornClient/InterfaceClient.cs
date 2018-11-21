@@ -166,5 +166,10 @@ namespace WinFormPimpMyUnicornClient
             //return the resulting bitmap
             return result;
         }
+
+        private void pictureBoxMain_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
