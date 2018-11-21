@@ -16,16 +16,7 @@ namespace WinFormPimpMyUnicornAdmin
         public FormAdmin()
         {
             InitializeComponent();
-
-            List<T_parties> parties = Crud.getAllParties();
-            List<T_elements> elements = Crud.getAllElements();
-
-            foreach(T_elements element in elements)
-            {
-                element.partieLibelle = parties.Where(x => x.Id_partie == element.partie_id).First().partieLibelle;
-            }
-
-            table_element.DataSource = new BindingList<T_elements>(elements);
+            drawDataGrid();
 
             table_element.Columns["Id_element"].Visible = false;
             table_element.Columns["elementsImg"].Visible = false;
@@ -51,16 +42,34 @@ namespace WinFormPimpMyUnicornAdmin
 
         }
 
+        public void drawDataGrid()
+        {
+            List<T_parties> parties = Crud.getAllParties();
+            List<T_elements> elements = Crud.getAllElements();
+
+            foreach (T_elements element in elements)
+            {
+                element.partieLibelle = parties.Where(x => x.Id_partie == element.partie_id).First().partieLibelle;
+            }
+
+            table_element.DataSource = new BindingList<T_elements>(elements);
+        }
+
         private void btn_create_Click(object sender, EventArgs e)
         {
             FormModal settingsForm = new FormModal();
-
+            settingsForm.onUpdateDataGrid += new FormModal.updateDataGrid(SettingsForm_onUpdateDataGrid);
             if (!settingsForm.IsDisposed)
             {
                 settingsForm.ShowDialog();
             }
 
             
+        }
+
+        private void SettingsForm_onUpdateDataGrid()
+        {
+            this.Invoke(new MethodInvoker(delegate { this.drawDataGrid(); }));
         }
 
         private void table_element_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -70,13 +79,14 @@ namespace WinFormPimpMyUnicornAdmin
                 T_elements thisElement = (T_elements)table_element.Rows[e.RowIndex].DataBoundItem;
 
                 FormModal settingsForm = new FormModal(thisElement);
+                settingsForm.onUpdateDataGrid += new FormModal.updateDataGrid(SettingsForm_onUpdateDataGrid);
                 settingsForm.Show();
             }
             else if (e.ColumnIndex == table_element.Columns["Supprimer"].Index)
             {
                 T_elements thisElement = (T_elements)table_element.Rows[e.RowIndex].DataBoundItem;
 
-                DialogResult confirmResult = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet éléments ?", "Êtes-vous sûr ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult confirmResult = MessageBox.Show("ï¿½tes-vous sï¿½r de vouloir supprimer cet ï¿½lï¿½ments ?", "ï¿½tes-vous sï¿½r ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirmResult == DialogResult.Yes)
                 {
                     Crud.deleteElement(thisElement.Id_element);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,10 @@ namespace WinFormPimpMyUnicorn
     public partial class FormModal : Form
     {
         private List<T_parties> _parties = Crud.getAllParties();
+
+        public delegate void updateDataGrid();
+
+        public event updateDataGrid onUpdateDataGrid;
 
         public FormModal(T_elements thisElement = null)
         {
@@ -85,6 +89,7 @@ namespace WinFormPimpMyUnicorn
             int partieID = -1;
             Information(out nomElement, out image, out partieID);
             Crud.insertElement(nomElement, image, partieID);
+            if (onUpdateDataGrid != null) onUpdateDataGrid();
             this.Dispose();
         }
 
@@ -96,6 +101,7 @@ namespace WinFormPimpMyUnicorn
             int idElement = Convert.ToInt32(id_element.Text);
             Information(out nomElement, out image, out partieID);
             Crud.updateElement(idElement, nomElement, image, partieID);
+            if (onUpdateDataGrid != null) onUpdateDataGrid();
             this.Dispose();
         }
 
