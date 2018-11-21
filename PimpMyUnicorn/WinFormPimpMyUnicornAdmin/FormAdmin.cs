@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,7 +48,12 @@ namespace WinFormPimpMyUnicornAdmin
         {
             FormModal settingsForm = new FormModal();
 
-            settingsForm.Show();
+            if (!settingsForm.IsDisposed)
+            {
+                settingsForm.ShowDialog();
+            }
+
+            
         }
 
         private void table_element_CellContentClick(object sender, DataGridViewCellEventArgs e)
