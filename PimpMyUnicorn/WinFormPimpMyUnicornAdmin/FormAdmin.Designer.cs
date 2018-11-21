@@ -38,7 +38,7 @@ namespace WinFormPimpMyUnicornAdmin
             // 
             this.table_element.AllowUserToAddRows = false;
             this.table_element.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.table_element.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.table_element.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.table_element.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.table_element.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table_element.Dock = System.Windows.Forms.DockStyle.Bottom;
