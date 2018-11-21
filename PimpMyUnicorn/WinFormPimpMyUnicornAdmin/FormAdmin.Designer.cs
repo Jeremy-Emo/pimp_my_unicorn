@@ -41,6 +41,7 @@
             this.table_element.Name = "table_element";
             this.table_element.Size = new System.Drawing.Size(1220, 741);
             this.table_element.TabIndex = 0;
+            this.table_element.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_element_CellContentClick);
             // 
             // btn_create
             // 
