@@ -20,7 +20,7 @@ namespace WinFormPimpMyUnicorn
             SQLiteConnection conn = new SQLiteConnection(_db);
             conn.Open();
 
-            string sql = "SELECT * from t_parties";
+            string sql = "SELECT Id_partie, partieLibelle from t_parties";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
             List<T_parties> parties = new List<T_parties>();
@@ -39,7 +39,7 @@ namespace WinFormPimpMyUnicorn
         {
             SQLiteConnection conn = new SQLiteConnection(_db);
             conn.Open();
-            string sql = "SELECT * from t_elements";
+            string sql = "SELECT Id_element, elementLibelle, elementsImg, partie_id from t_elements";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
             List<T_elements> elements = new List<T_elements>();
