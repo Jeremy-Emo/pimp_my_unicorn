@@ -123,6 +123,8 @@
             // 
             // pictureBoxMain
             // 
+            this.pictureBoxMain.BackgroundImage = global::WinFormPimpMyUnicornClient.Properties.Resources.Base;
+            this.pictureBoxMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBoxMain.Location = new System.Drawing.Point(225, 65);
             this.pictureBoxMain.Name = "pictureBoxMain";
             this.pictureBoxMain.Size = new System.Drawing.Size(814, 791);
