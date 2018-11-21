@@ -8,25 +8,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
-
+using WinFormPimpMyUnicornAdmin;
 
 namespace WinFormPimpMyUnicorn
 {
     public partial class FormModal : Form
     {
-        public FormModal()
+        private List<T_parties> _parties = Crud.getAllParties();
+
+        public FormModal(T_elements thisElement = null)
         {
             InitializeComponent();
 
-            var _parties = Crud.getAllParties();
+            if (_parties != null && _parties.Count > 0)
+            {
+                
+                Dictionary<int, string> parties = _parties.ToDictionary(p => p.Id_partie, p => p.partieLibelle);
 
-            Dictionary<int, string> parties = _parties.ToDictionary(p => p.Id_partie, p => p.partieLibelle);
-           
-            select_partie.DataSource = new BindingSource(parties,null);
-            select_partie.DisplayMember = "Value";
-            select_partie.ValueMember = "Key";
+                select_partie.DataSource = new BindingSource(parties, null);
+                select_partie.DisplayMember = "Value";
+                select_partie.ValueMember = "Key";
 
+                if(thisElement != null)
+                {
+                    name_element.Text = thisElement.elementLibelle;
+                    display_image.Image = DisplayBase64Picture(thisElement.elementsImg);
+                    select_partie.SelectedValue = thisElement.partie_id;
+                    id_element.Text = thisElement.Id_element.ToString();
+
+                    add_element.Click -= new EventHandler(add_element_Click);
+                    add_element.Click += new EventHandler(update_element_Click);
+                }
+
+            } else
+            {
+                MessageBox.Show("Impossible de récupérer les parties de licorne", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Dispose();
+            }
         }
 
         private static Image DisplayBase64Picture(string base64)
@@ -62,17 +80,36 @@ namespace WinFormPimpMyUnicorn
 
         private void add_element_Click(object sender, EventArgs e)
         {
-            string nomElement = name_element.Text;
+            string nomElement = string.Empty;
+            string image = string.Empty;
+            int partieID = -1;
+            Information(out nomElement, out image, out partieID);
+            Crud.insertElement(nomElement, image, partieID);
+            this.Dispose();
+        }
+
+        private void update_element_Click(object sender, EventArgs e)
+        {
+            string nomElement = string.Empty;
+            string image = string.Empty;
+            int partieID = -1;
+            int idElement = Convert.ToInt32(id_element.Text);
+            Information(out nomElement, out image, out partieID);
+            Crud.updateElement(idElement, nomElement, image, partieID);
+            this.Dispose();
+        }
+
+        private void Information(out string nomElement, out string image, out int partieID)
+        {
+            nomElement = name_element.Text;
             byte[] byteArrayForImage = new byte[0];
-            using(MemoryStream ms = new MemoryStream())
+            using (MemoryStream ms = new MemoryStream())
             {
                 new Bitmap(display_image.Image).Save(ms, display_image.Image.RawFormat);
                 byteArrayForImage = ms.ToArray();
             }
-            string image = Convert.ToBase64String(byteArrayForImage);
-            int partieID = Convert.ToInt32(select_partie.SelectedValue);
-
-          
+            image = Convert.ToBase64String(byteArrayForImage);
+            partieID = Convert.ToInt32(select_partie.SelectedValue);
         }
     }
 }

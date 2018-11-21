@@ -38,6 +38,7 @@
             this.name_img = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.admin_titre = new System.Windows.Forms.Label();
+            this.id_element = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.display_image)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +87,7 @@
             this.display_image.Location = new System.Drawing.Point(254, -2);
             this.display_image.Name = "display_image";
             this.display_image.Size = new System.Drawing.Size(689, 568);
+            this.display_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.display_image.TabIndex = 5;
             this.display_image.TabStop = false;
             // 
@@ -100,6 +102,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.id_element);
             this.panel1.Controls.Add(this.admin_titre);
             this.panel1.Controls.Add(this.select_partie);
             this.panel1.Controls.Add(this.name_img);
@@ -120,6 +123,16 @@
             this.admin_titre.TabIndex = 7;
             this.admin_titre.Text = "Ajouter un élément";
             this.admin_titre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // id_element
+            // 
+            this.id_element.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.id_element.Enabled = false;
+            this.id_element.Location = new System.Drawing.Point(3, 548);
+            this.id_element.Name = "id_element";
+            this.id_element.Size = new System.Drawing.Size(53, 20);
+            this.id_element.TabIndex = 8;
+            this.id_element.Visible = false;
             // 
             // FormModal
             // 
@@ -151,5 +164,6 @@
         private System.Windows.Forms.Label name_img;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label admin_titre;
+        private System.Windows.Forms.TextBox id_element;
     }
 }

@@ -13,14 +13,13 @@ namespace WinFormPimpMyUnicorn
     public class Crud
     {
         private static string _db = "Data Source=MyDatabase.db3;Version=3;";
-        private static string _path = Settings1.Default.path_to_folder + DateTime.Now + "." + Settings1.Default.file_extension;
         
         public static List<T_parties> getAllParties()
         {
             SQLiteConnection conn = new SQLiteConnection(_db);
             conn.Open();
 
-            string sql = "SELECT * from t_parties";
+            string sql = "SELECT Id_partie, partieLibelle from t_parties";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
             List<T_parties> parties = new List<T_parties>();
@@ -39,7 +38,7 @@ namespace WinFormPimpMyUnicorn
         {
             SQLiteConnection conn = new SQLiteConnection(_db);
             conn.Open();
-            string sql = "SELECT * from t_elements";
+            string sql = "SELECT Id_element, elementLibelle, elementsImg, partie_id from t_elements";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
             List<T_elements> elements = new List<T_elements>();
@@ -56,15 +55,59 @@ namespace WinFormPimpMyUnicorn
             return elements;
         }
 
+        public static void insertElement(string nomElement, string image, int partieID)
+        {
+            SQLiteConnection conn = new SQLiteConnection(_db);
+            conn.Open();
+
+            string sql = "INSERT INTO t_elements (elementLibelle, elementsImg, partie_id) VALUES('"+
+                nomElement + "','" + image + "', " + partieID + ")";
+            SQLiteCommand command = new SQLiteCommand(sql, conn);
+            command.ExecuteNonQuery();
+
+            Crud.registerSQL(sql);
+
+            conn.Close();
+        }
+
+        public static void updateElement(int idElement, string nomElement, string image, int partieID)
+        {
+            SQLiteConnection conn = new SQLiteConnection(_db);
+            conn.Open();
+
+            string sql = "UPDATE t_elements SET elementLibelle='" + nomElement +
+                "', elementsImg='" + image +
+                "', partie_id=" + partieID +
+                " WHERE Id_element=" + idElement;
+            SQLiteCommand command = new SQLiteCommand(sql, conn);
+            command.ExecuteNonQuery();
+
+            Crud.registerSQL(sql);
+
+            conn.Close();
+        }
+
+        public static void deleteElement(int id)
+        {
+            SQLiteConnection conn = new SQLiteConnection(_db);
+            conn.Open();
+
+            string sql = "DELETE FROM t_elements WHERE Id_element = " + id;
+            SQLiteCommand command = new SQLiteCommand(sql, conn);
+            command.ExecuteNonQuery();
+
+            Crud.registerSQL(sql);
+
+            conn.Close();
+        }
+
         public static void registerSQL(string command)
         {
-            if (!File.Exists(_path))
+            StreamWriter Sw = new StreamWriter(@Settings1.Default.path_to_folder + @"\" + DateTime.Now.Ticks + "." + @Settings1.Default.file_extension, true, Encoding.Default);
+            lock (Sw)
             {
-                File.Create(_path);
-            }
-            using (StreamWriter sw = File.AppendText(_path))
-            {
-                sw.WriteLine(command);
+                Sw.WriteLine(command);
+                Sw.Close();
             }
         }
     }
