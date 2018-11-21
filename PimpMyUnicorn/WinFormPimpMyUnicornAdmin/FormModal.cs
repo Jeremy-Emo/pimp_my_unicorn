@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
-
+using WinFormPimpMyUnicornAdmin;
 
 namespace WinFormPimpMyUnicorn
 {
     public partial class FormModal : Form
     {
-        public FormModal()
+        public FormModal(T_elements thisElement = null)
         {
             InitializeComponent();
 
@@ -26,6 +25,14 @@ namespace WinFormPimpMyUnicorn
             select_partie.DataSource = new BindingSource(parties,null);
             select_partie.DisplayMember = "Value";
             select_partie.ValueMember = "Key";
+
+            if(thisElement != null)
+            {
+                name_element.Text = thisElement.elementLibelle;
+                display_image.Image = DisplayBase64Picture(thisElement.elementsImg);
+                select_partie.SelectedValue = thisElement.partie_id;
+
+            }
 
         }
 
