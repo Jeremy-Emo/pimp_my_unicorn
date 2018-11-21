@@ -1,4 +1,4 @@
-﻿namespace WinFormPimpMyUnicornAdmin
+namespace WinFormPimpMyUnicornAdmin
 {
     partial class FormAdmin
     {
@@ -36,6 +36,7 @@
             // 
             // table_element
             // 
+            this.table_element.AllowUserToAddRows = false;
             this.table_element.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table_element.Location = new System.Drawing.Point(12, 168);
             this.table_element.Name = "table_element";

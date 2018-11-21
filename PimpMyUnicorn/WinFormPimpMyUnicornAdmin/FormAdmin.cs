@@ -18,10 +18,10 @@ namespace WinFormPimpMyUnicornAdmin
             InitializeComponent();
 
 
-            table_element.DataSource = Crud.getAllElements();
+            table_element.DataSource = new BindingList<T_elements>(Crud.getAllElements());
 
-            this.table_element.Columns["Id_element"].Visible = false;
-            this.table_element.Columns["elementsImg"].Visible = false;
+            table_element.Columns["Id_element"].Visible = false;
+            table_element.Columns["elementsImg"].Visible = false;
 
 
             DataGridViewButtonColumn dgBtnCol = new DataGridViewButtonColumn
@@ -65,6 +65,18 @@ namespace WinFormPimpMyUnicornAdmin
                 FormModal settingsForm = new FormModal(thisElement);
                 settingsForm.Show();
             }
+            else if (e.ColumnIndex == table_element.Columns["Supprimer"].Index)
+            {
+                T_elements thisElement = (T_elements)table_element.Rows[e.RowIndex].DataBoundItem;
+
+                DialogResult confirmResult = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet éléments ?", "Êtes-vous sûr ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    Crud.deleteElement(thisElement.Id_element);
+                    table_element.Rows.RemoveAt(e.RowIndex);
+                }
+            }
+
         }
     }
 }
