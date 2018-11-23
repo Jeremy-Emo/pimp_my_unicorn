@@ -142,7 +142,6 @@
             this.pictureBoxMain.Size = new System.Drawing.Size(800, 800);
             this.pictureBoxMain.TabIndex = 3;
             this.pictureBoxMain.TabStop = false;
-            this.pictureBoxMain.Click += new System.EventHandler(this.pictureBoxMain_Click);
             // 
             // InterfaceClient
             // 
@@ -159,6 +158,7 @@
             this.Name = "InterfaceClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pimp My Unicorn ";
+            this.Shown += new System.EventHandler(this.InterfaceClient_Shown);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).EndInit();
