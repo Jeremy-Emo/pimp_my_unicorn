@@ -28,6 +28,9 @@ namespace WinFormPimpMyUnicorn.WCFPimpMyUnicorn {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LibelleField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrdreField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -60,6 +63,19 @@ namespace WinFormPimpMyUnicorn.WCFPimpMyUnicorn {
                 if ((object.ReferenceEquals(this.LibelleField, value) != true)) {
                     this.LibelleField = value;
                     this.RaisePropertyChanged("Libelle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Ordre {
+            get {
+                return this.OrdreField;
+            }
+            set {
+                if ((this.OrdreField.Equals(value) != true)) {
+                    this.OrdreField = value;
+                    this.RaisePropertyChanged("Ordre");
                 }
             }
         }

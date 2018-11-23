@@ -7,6 +7,7 @@ namespace WCFPimpMyUnicorn.DTO
     {
         private int _id;
         private string _libelle;
+        private int _ordre;
 
         [DataMember]
         public int ID
@@ -20,6 +21,13 @@ namespace WCFPimpMyUnicorn.DTO
         {
             get { return _libelle; }
             set { _libelle = value; }
+        }
+
+        [DataMember]
+        public int Ordre
+        {
+            get { return _ordre; }
+            set { _ordre = value; }
         }
     }
 }

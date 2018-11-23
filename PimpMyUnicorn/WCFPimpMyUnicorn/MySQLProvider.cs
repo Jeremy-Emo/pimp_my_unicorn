@@ -49,7 +49,7 @@ namespace WCFPimpMyUnicorn
                 using (MySqlConnection cn = new MySqlConnection(cs))
                 {
                     cn.Open();
-                    string query = "SELECT Id_partie, partieLibelle FROM t_parties";
+                    string query = "SELECT Id_partie, partieLibelle, partieOrdre FROM t_parties";
                     using (MySqlDataAdapter da = new MySqlDataAdapter(query, cn))
                     {
                         da.Fill(_dt);
