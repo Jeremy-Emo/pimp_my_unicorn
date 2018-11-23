@@ -19,7 +19,7 @@ namespace WinFormPimpMyUnicorn
             SQLiteConnection conn = new SQLiteConnection(_db);
             conn.Open();
 
-            string sql = "SELECT Id_partie, partieLibelle, ordre from t_parties";
+            string sql = "SELECT Id_partie, partieLibelle, partieOrdre from t_parties";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
             List<T_parties> parties = new List<T_parties>();
@@ -28,7 +28,7 @@ namespace WinFormPimpMyUnicorn
                 T_parties p = new T_parties();
                 p.Id_partie = Convert.ToInt32(reader.GetValue(0));
                 p.partieLibelle = reader.GetValue(1).ToString();
-                p.ordre = Convert.ToInt16(reader.GetValue(2));
+                p.partieOrdre = Convert.ToInt16(reader.GetValue(2));
                 parties.Add(p);
             }
             conn.Close();
@@ -107,7 +107,7 @@ namespace WinFormPimpMyUnicorn
             SQLiteConnection conn = new SQLiteConnection(_db);
             conn.Open();
 
-            string sql = "INSERT INTO t_parties (partieLibelle, ordre) VALUES('" +
+            string sql = "INSERT INTO t_parties (partieLibelle, partieOrdre) VALUES('" +
                 nomPartie + "', " + ordre + ")";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             command.ExecuteNonQuery();
@@ -123,7 +123,7 @@ namespace WinFormPimpMyUnicorn
             conn.Open();
 
             string sql = "UPDATE t_parties SET partieLibelle='" + nomPartie +
-                "', ordre=" + ordre +
+                "', partieOrdre=" + ordre +
                 " WHERE Id_partie=" + idPartie;
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             command.ExecuteNonQuery();

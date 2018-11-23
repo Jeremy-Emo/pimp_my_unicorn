@@ -45,8 +45,8 @@ namespace WinFormPimpMyUnicornAdmin
 
                 foreach(WinFormPimpMyUnicorn.WCFPimpMyUnicorn.PartiesDTO da in data)
                 {
-                    string test = "INSERT INTO `t_parties` (`Id_partie`, `partieLibelle`, `ordre`) VALUES" +
-                            "(" + da.ID + ",'" + da.Libelle + "' " + da.ordre + ");";
+                    string test = "INSERT INTO `t_parties` (`Id_partie`, `partieLibelle`, `partieOrdre`) VALUES" +
+                            "(" + da.ID + ",'" + da.Libelle + "' " + da.Ordre + ");";
                     SQLiteCommand import3 = new SQLiteCommand(test, conn);
                     import3.ExecuteNonQuery();
                 }
