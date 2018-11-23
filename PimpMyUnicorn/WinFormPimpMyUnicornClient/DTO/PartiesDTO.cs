@@ -4,6 +4,7 @@
     {
         private int _id;
         private string _libelle;
+        private int _partieOrdre;
 
         public int ID
         {
@@ -14,6 +15,11 @@
         {
             get { return _libelle; }
             set { _libelle = value; }
+        }
+        public int partieOrdre
+        {
+            get { return _partieOrdre; }
+            set { _partieOrdre = value; }
         }
     }
 }
