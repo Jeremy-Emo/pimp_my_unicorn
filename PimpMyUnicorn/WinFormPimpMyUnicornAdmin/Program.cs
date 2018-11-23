@@ -24,7 +24,8 @@ namespace WinFormPimpMyUnicornAdmin
                 conn.Open();
                 string sql = "CREATE TABLE IF NOT EXISTS `t_parties` ("+
                   "`Id_partie` INTEGER PRIMARY KEY NOT NULL," +
-                  "`partieLibelle` varchar(255) NOT NULL"+
+                  "`partieLibelle` varchar(255) NOT NULL," +
+                  "`ordre` int(11) NOT NULL" +
                 ");";
                 SQLiteCommand import = new SQLiteCommand(sql, conn);
                 import.ExecuteNonQuery();
@@ -44,8 +45,8 @@ namespace WinFormPimpMyUnicornAdmin
 
                 foreach(WinFormPimpMyUnicorn.WCFPimpMyUnicorn.PartiesDTO da in data)
                 {
-                    string test = "INSERT INTO `t_parties` (`Id_partie`, `partieLibelle`) VALUES" +
-                            "(" + da.ID + ",'" + da.Libelle + "');";
+                    string test = "INSERT INTO `t_parties` (`Id_partie`, `partieLibelle`, `ordre`) VALUES" +
+                            "(" + da.ID + ",'" + da.Libelle + "' " + da.ordre + ");";
                     SQLiteCommand import3 = new SQLiteCommand(test, conn);
                     import3.ExecuteNonQuery();
                 }
