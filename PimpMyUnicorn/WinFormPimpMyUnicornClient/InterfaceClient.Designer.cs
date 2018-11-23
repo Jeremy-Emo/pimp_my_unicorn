@@ -124,6 +124,7 @@
             // saveUnicorn
             // 
             this.saveUnicorn.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.saveUnicorn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveUnicorn.Location = new System.Drawing.Point(3, 33);
             this.saveUnicorn.Name = "saveUnicorn";
             this.saveUnicorn.Size = new System.Drawing.Size(219, 23);
@@ -135,6 +136,7 @@
             // pictureBoxMain
             // 
             this.pictureBoxMain.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxMain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxMain.Location = new System.Drawing.Point(225, 65);
             this.pictureBoxMain.Name = "pictureBoxMain";
             this.pictureBoxMain.Size = new System.Drawing.Size(800, 800);
