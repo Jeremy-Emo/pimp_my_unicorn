@@ -1,4 +1,4 @@
-﻿namespace WinFormPimpMyUnicornClient
+namespace WinFormPimpMyUnicornClient
 {
     partial class InterfaceClient
     {
@@ -129,7 +129,7 @@
             this.saveUnicorn.Name = "saveUnicorn";
             this.saveUnicorn.Size = new System.Drawing.Size(219, 23);
             this.saveUnicorn.TabIndex = 0;
-            this.saveUnicorn.Text = "Enregistrer ma Lincorne";
+            this.saveUnicorn.Text = "Enregistrer ma Licorne";
             this.saveUnicorn.UseVisualStyleBackColor = false;
             this.saveUnicorn.Click += new System.EventHandler(this.saveUnicorn_Click);
             // 
