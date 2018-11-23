@@ -76,7 +76,7 @@ namespace WinFormPimpMyUnicornClient
                 Label thisLabel = new Label
                 {
                     Name = "labelPartie" + turn,
-                    Location = new Point(10, 100 + 50 * turn),
+                    Location = new Point(10, 30 + 50 * turn),
                     BackColor = Color.Transparent,
                     Text = partie.Libelle + ":",
                     Font = new Font("Arial Black", 9)
@@ -86,7 +86,7 @@ namespace WinFormPimpMyUnicornClient
                 ComboBox thisComboBox = new ComboBox
                 {
                     Name = "comboBoxartie" + turn,
-                    Location = new Point(90, 100 + 50 * turn),
+                    Location = new Point(90, 30 + 50 * turn),
                     DataSource = new BindingSource(thisComboBoxValue, ""),
                     DisplayMember = "Value",
                     ValueMember = "Key",

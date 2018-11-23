@@ -125,7 +125,7 @@ namespace WinFormPimpMyUnicornClient
             // 
             this.saveUnicorn.BackColor = System.Drawing.SystemColors.HighlightText;
             this.saveUnicorn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveUnicorn.Location = new System.Drawing.Point(3, 33);
+            this.saveUnicorn.Location = new System.Drawing.Point(3, 30);
             this.saveUnicorn.Name = "saveUnicorn";
             this.saveUnicorn.Size = new System.Drawing.Size(219, 23);
             this.saveUnicorn.TabIndex = 0;
