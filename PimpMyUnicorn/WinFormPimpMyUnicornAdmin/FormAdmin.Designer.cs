@@ -40,22 +40,22 @@ namespace WinFormPimpMyUnicornAdmin
             // table_element
             // 
             this.table_element.AllowUserToAddRows = false;
+            this.table_element.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.table_element.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.table_element.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.table_element.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.table_element.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.table_element.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table_element.Location = new System.Drawing.Point(0, 101);
+            this.table_element.Location = new System.Drawing.Point(119, 101);
             this.table_element.Name = "table_element";
             this.table_element.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.table_element.Size = new System.Drawing.Size(450, 490);
+            this.table_element.Size = new System.Drawing.Size(701, 553);
             this.table_element.TabIndex = 0;
             this.table_element.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_element_CellContentClick);
             // 
             // btn_create
             // 
-            this.btn_create.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_create.Location = new System.Drawing.Point(139, 29);
+            this.btn_create.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_create.Location = new System.Drawing.Point(385, 29);
             this.btn_create.Name = "btn_create";
             this.btn_create.Size = new System.Drawing.Size(155, 48);
             this.btn_create.TabIndex = 1;
@@ -65,7 +65,8 @@ namespace WinFormPimpMyUnicornAdmin
             // 
             // btn_create_partie
             // 
-            this.btn_create_partie.Location = new System.Drawing.Point(671, 29);
+            this.btn_create_partie.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_create_partie.Location = new System.Drawing.Point(1068, 29);
             this.btn_create_partie.Name = "btn_create_partie";
             this.btn_create_partie.Size = new System.Drawing.Size(151, 48);
             this.btn_create_partie.TabIndex = 2;
@@ -76,24 +77,27 @@ namespace WinFormPimpMyUnicornAdmin
             // table_partie
             // 
             this.table_partie.AllowUserToAddRows = false;
+            this.table_partie.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.table_partie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.table_partie.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.table_partie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.table_partie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table_partie.Location = new System.Drawing.Point(494, 101);
+            this.table_partie.Location = new System.Drawing.Point(841, 101);
             this.table_partie.Name = "table_partie";
-            this.table_partie.Size = new System.Drawing.Size(450, 490);
+            this.table_partie.Size = new System.Drawing.Size(701, 553);
             this.table_partie.TabIndex = 3;
+            this.table_partie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_partie_CellContentClick);
             // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 591);
+            this.ClientSize = new System.Drawing.Size(1581, 888);
             this.Controls.Add(this.table_partie);
             this.Controls.Add(this.btn_create_partie);
             this.Controls.Add(this.btn_create);
             this.Controls.Add(this.table_element);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
