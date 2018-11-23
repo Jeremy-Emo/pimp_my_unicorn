@@ -113,6 +113,7 @@
             this.Controls.Add(this.btn_add_partie);
             this.Controls.Add(this.partie_ordre);
             this.Controls.Add(this.partie_nom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormPartie";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
