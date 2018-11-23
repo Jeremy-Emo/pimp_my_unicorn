@@ -49,7 +49,7 @@ namespace WCFPimpMyUnicorn
                 using (MySqlConnection cn = new MySqlConnection(cs))
                 {
                     cn.Open();
-                    string query = "SELECT Id_partie, partieLibelle FROM t_parties";
+                    string query = "SELECT Id_partie, partieLibelle, partieOrdre FROM t_parties";
                     using (MySqlDataAdapter da = new MySqlDataAdapter(query, cn))
                     {
                         da.Fill(_dt);
@@ -67,6 +67,7 @@ namespace WCFPimpMyUnicorn
                 PartiesDTO partie = new PartiesDTO();
                 partie.ID = Convert.ToInt32(row["Id_partie"]);
                 partie.Libelle = row["partieLibelle"].ToString();
+                partie.Ordre = Convert.ToInt16(row["partieOrdre"]);
                 parties.Add(partie);
             }
             return parties;

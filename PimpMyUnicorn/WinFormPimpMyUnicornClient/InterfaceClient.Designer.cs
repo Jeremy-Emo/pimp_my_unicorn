@@ -1,4 +1,4 @@
-﻿namespace WinFormPimpMyUnicornClient
+namespace WinFormPimpMyUnicornClient
 {
     partial class InterfaceClient
     {
@@ -105,7 +105,7 @@
             this.panelFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFooter.BackColor = System.Drawing.Color.Violet;
-            this.panelFooter.Location = new System.Drawing.Point(0, 865);
+            this.panelFooter.Location = new System.Drawing.Point(0, 665);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1264, 56);
             this.panelFooter.TabIndex = 0;
@@ -129,7 +129,7 @@
             this.saveUnicorn.Name = "saveUnicorn";
             this.saveUnicorn.Size = new System.Drawing.Size(219, 23);
             this.saveUnicorn.TabIndex = 0;
-            this.saveUnicorn.Text = "Enregistrer ma Lincorne";
+            this.saveUnicorn.Text = "Enregistrer ma Licorne";
             this.saveUnicorn.UseVisualStyleBackColor = false;
             this.saveUnicorn.Click += new System.EventHandler(this.saveUnicorn_Click);
             // 

@@ -16,11 +16,13 @@ namespace WinFormPimpMyUnicornAdmin
         public FormAdmin()
         {
             InitializeComponent();
-            drawDataGrid();
+            drawDataGridElement();
 
             table_element.Columns["Id_element"].Visible = false;
             table_element.Columns["elementsImg"].Visible = false;
             table_element.Columns["partie_id"].Visible = false;
+            table_element.Columns["elementLibelle"].HeaderText = "Element";
+            table_element.Columns["partieLibelle"].HeaderText = "Partie";
 
             DataGridViewButtonColumn dgBtnCol = new DataGridViewButtonColumn
             {
@@ -40,9 +42,33 @@ namespace WinFormPimpMyUnicornAdmin
             };
             table_element.Columns.Add(delBtnCol);
 
+
+            drawDataGridPartie();
+            table_partie.Columns["Id_partie"].Visible = false;
+            table_partie.Columns["partieLibelle"].HeaderText = "Element";
+            table_partie.Columns["partieOrdre"].HeaderText = "Ordre";
+
+            DataGridViewButtonColumn dgBtnColPartie = new DataGridViewButtonColumn
+            {
+                UseColumnTextForButtonValue = true,
+                Text = "Details",
+                HeaderText = "Details",
+                Name = "Details"
+            };
+            table_partie.Columns.Add(dgBtnColPartie);
+
+            DataGridViewButtonColumn delBtnColPartie = new DataGridViewButtonColumn
+            {
+                UseColumnTextForButtonValue = true,
+                Text = "Supprimer",
+                HeaderText = "Supprimer",
+                Name = "Supprimer"
+            };
+            table_partie.Columns.Add(delBtnColPartie);
+
         }
 
-        public void drawDataGrid()
+        public void drawDataGridElement()
         {
             List<T_parties> parties = Crud.getAllParties();
             List<T_elements> elements = Crud.getAllElements();
@@ -55,6 +81,11 @@ namespace WinFormPimpMyUnicornAdmin
             table_element.DataSource = new BindingList<T_elements>(elements);
         }
 
+        public void drawDataGridPartie()
+        {
+            List<T_parties> parties = Crud.getAllParties();
+            table_partie.DataSource = new BindingList<T_parties>(parties);
+        }
         private void btn_create_Click(object sender, EventArgs e)
         {
             FormModal settingsForm = new FormModal();
@@ -69,7 +100,12 @@ namespace WinFormPimpMyUnicornAdmin
 
         private void SettingsForm_onUpdateDataGrid()
         {
-            this.Invoke(new MethodInvoker(delegate { this.drawDataGrid(); }));
+            this.Invoke(new MethodInvoker(delegate { this.drawDataGridElement(); }));
+        }
+
+        private void FormPartie_onUpdateDataGrid()
+        {
+            this.Invoke(new MethodInvoker(delegate { this.drawDataGridPartie(); }));
         }
 
         private void table_element_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -86,7 +122,7 @@ namespace WinFormPimpMyUnicornAdmin
             {
                 T_elements thisElement = (T_elements)table_element.Rows[e.RowIndex].DataBoundItem;
 
-                DialogResult confirmResult = MessageBox.Show("�tes-vous s�r de vouloir supprimer cet �l�ments ?", "�tes-vous s�r ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult confirmResult = MessageBox.Show("Etes-vous sur de vouloir supprimer cet elements ?", "Etes-vous sur ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirmResult == DialogResult.Yes)
                 {
                     Crud.deleteElement(thisElement.Id_element);
@@ -94,6 +130,13 @@ namespace WinFormPimpMyUnicornAdmin
                 }
             }
 
+        }
+
+        private void btn_create_partie_Click(object sender, EventArgs e)
+        {
+            FormPartie formPartie = new FormPartie();
+            formPartie.onUpdateDataGrid += new FormPartie.updateDataGrid(FormPartie_onUpdateDataGrid);
+            formPartie.ShowDialog();
         }
     }
 }

@@ -42,6 +42,8 @@ namespace WinFormPimpMyUnicorn
 
                     add_element.Click -= new EventHandler(add_element_Click);
                     add_element.Click += new EventHandler(update_element_Click);
+
+                    admin_titre.Text = "Modifier un element";
                 }
 
             } else
@@ -116,6 +118,11 @@ namespace WinFormPimpMyUnicorn
             }
             image = Convert.ToBase64String(byteArrayForImage);
             partieID = Convert.ToInt32(select_partie.SelectedValue);
+        }
+
+        private void exit_button_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
