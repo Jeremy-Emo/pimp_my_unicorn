@@ -20,5 +20,6 @@ namespace WinFormPimpMyUnicornAdmin
     {
         public int Id_partie { get; set; }
         public string partieLibelle { get; set; }
+        public int ordre { get; set; }
     }
 }
