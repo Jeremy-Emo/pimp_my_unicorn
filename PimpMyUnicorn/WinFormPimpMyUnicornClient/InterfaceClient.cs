@@ -92,7 +92,6 @@ namespace WinFormPimpMyUnicornClient
                     ValueMember = "Key",
                     Cursor = Cursors.Hand
                 };
-                thisComboBox.SelectedIndexChanged += comboBoxChanged;
 
                 PictureBox thisPictureBox = new PictureBox
                 {
@@ -112,8 +111,12 @@ namespace WinFormPimpMyUnicornClient
             List<ComboBox> comboboxes = panelLeft.Controls.OfType<ComboBox>().ToList();
             foreach (ComboBox cb in comboboxes)
             {
+                cb.SelectedIndexChanged -= comboBoxChanged;
                 if (cb.Items.Count > 1)
                     cb.SelectedIndex = 1;
+                cb.SelectedIndexChanged += comboBoxChanged;
+                if (cb == comboboxes.Last())
+                    comboBoxChanged(null, null);
             }
         }
 
@@ -140,6 +143,21 @@ namespace WinFormPimpMyUnicornClient
                     images.Add(DisplayBase64Picture(_elements.Find(x => x.ID == ID).Image));
             }
             pictureBoxMain.Image = CombineAndResizeTwoImages(images, pictureBoxMain.Width, pictureBoxMain.Height);
+        }
+
+        private void shuffleButton_Click(object sender, EventArgs e)
+        {
+            List<ComboBox> comboboxes = panelLeft.Controls.OfType<ComboBox>().ToList();
+            foreach (ComboBox cb in comboboxes)
+            {
+                cb.SelectedIndexChanged -= comboBoxChanged;
+                int cbItems = cb.Items.Count;
+                if (cbItems > 1)
+                    cb.SelectedIndex = new Random().Next(cbItems - 1);
+                cb.SelectedIndexChanged += comboBoxChanged;
+                if (cb == comboboxes.Last())
+                    comboBoxChanged(null, null);
+            }
         }
 
 

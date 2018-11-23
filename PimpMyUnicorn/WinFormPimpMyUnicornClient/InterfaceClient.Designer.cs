@@ -38,9 +38,11 @@ namespace WinFormPimpMyUnicornClient
             this.panelLeft = new System.Windows.Forms.Panel();
             this.saveUnicorn = new System.Windows.Forms.Button();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
+            this.shuffleButton = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
+            this.panelRight.SuspendLayout();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +97,7 @@ namespace WinFormPimpMyUnicornClient
             this.panelRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelRight.BackColor = System.Drawing.Color.HotPink;
+            this.panelRight.Controls.Add(this.shuffleButton);
             this.panelRight.Location = new System.Drawing.Point(1025, 65);
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(239, 624);
@@ -147,6 +150,17 @@ namespace WinFormPimpMyUnicornClient
             this.pictureBoxMain.TabIndex = 3;
             this.pictureBoxMain.TabStop = false;
             // 
+            // shuffleButton
+            // 
+            this.shuffleButton.BackColor = System.Drawing.Color.White;
+            this.shuffleButton.Location = new System.Drawing.Point(6, 30);
+            this.shuffleButton.Name = "shuffleButton";
+            this.shuffleButton.Size = new System.Drawing.Size(230, 23);
+            this.shuffleButton.TabIndex = 0;
+            this.shuffleButton.Text = "Aléatoire";
+            this.shuffleButton.UseVisualStyleBackColor = false;
+            this.shuffleButton.Click += new System.EventHandler(this.shuffleButton_Click);
+            // 
             // InterfaceClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +181,7 @@ namespace WinFormPimpMyUnicornClient
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).EndInit();
+            this.panelRight.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             this.ResumeLayout(false);
@@ -184,5 +199,6 @@ namespace WinFormPimpMyUnicornClient
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Button saveUnicorn;
         private System.Windows.Forms.PictureBox pictureBoxMain;
+        private System.Windows.Forms.Button shuffleButton;
     }
 }
