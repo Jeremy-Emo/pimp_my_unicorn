@@ -153,7 +153,7 @@ namespace WinFormPimpMyUnicornClient
                 cb.SelectedIndexChanged -= comboBoxChanged;
                 int cbItems = cb.Items.Count;
                 if (cbItems > 1)
-                    cb.SelectedIndex = new Random().Next(cbItems - 1);
+                    cb.SelectedIndex = new Random().Next(cbItems);
                 cb.SelectedIndexChanged += comboBoxChanged;
                 if (cb == comboboxes.Last())
                     comboBoxChanged(null, null);
