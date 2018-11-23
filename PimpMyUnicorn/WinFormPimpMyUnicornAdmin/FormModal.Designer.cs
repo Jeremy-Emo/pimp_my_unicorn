@@ -37,8 +37,9 @@ namespace WinFormPimpMyUnicorn
             this.display_image = new System.Windows.Forms.PictureBox();
             this.name_img = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.admin_titre = new System.Windows.Forms.Label();
             this.id_element = new System.Windows.Forms.TextBox();
+            this.admin_titre = new System.Windows.Forms.Label();
+            this.exit_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.display_image)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +75,9 @@ namespace WinFormPimpMyUnicorn
             // 
             // add_element
             // 
-            this.add_element.Location = new System.Drawing.Point(92, 344);
+            this.add_element.Location = new System.Drawing.Point(26, 344);
             this.add_element.Name = "add_element";
-            this.add_element.Size = new System.Drawing.Size(61, 35);
+            this.add_element.Size = new System.Drawing.Size(80, 35);
             this.add_element.TabIndex = 4;
             this.add_element.Text = "Valider";
             this.add_element.UseVisualStyleBackColor = true;
@@ -84,9 +85,9 @@ namespace WinFormPimpMyUnicorn
             // 
             // display_image
             // 
-            this.display_image.Location = new System.Drawing.Point(254, -2);
+            this.display_image.Location = new System.Drawing.Point(254, 1);
             this.display_image.Name = "display_image";
-            this.display_image.Size = new System.Drawing.Size(689, 568);
+            this.display_image.Size = new System.Drawing.Size(689, 590);
             this.display_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.display_image.TabIndex = 5;
             this.display_image.TabStop = false;
@@ -102,6 +103,7 @@ namespace WinFormPimpMyUnicorn
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.exit_button);
             this.panel1.Controls.Add(this.id_element);
             this.panel1.Controls.Add(this.admin_titre);
             this.panel1.Controls.Add(this.select_partie);
@@ -111,8 +113,18 @@ namespace WinFormPimpMyUnicorn
             this.panel1.Controls.Add(this.add_element);
             this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 581);
+            this.panel1.Size = new System.Drawing.Size(257, 593);
             this.panel1.TabIndex = 7;
+            // 
+            // id_element
+            // 
+            this.id_element.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.id_element.Enabled = false;
+            this.id_element.Location = new System.Drawing.Point(3, 548);
+            this.id_element.Name = "id_element";
+            this.id_element.Size = new System.Drawing.Size(53, 20);
+            this.id_element.TabIndex = 8;
+            this.id_element.Visible = false;
             // 
             // admin_titre
             // 
@@ -124,15 +136,15 @@ namespace WinFormPimpMyUnicorn
             this.admin_titre.Text = "Ajouter un élément";
             this.admin_titre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // id_element
+            // exit_button
             // 
-            this.id_element.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.id_element.Enabled = false;
-            this.id_element.Location = new System.Drawing.Point(3, 548);
-            this.id_element.Name = "id_element";
-            this.id_element.Size = new System.Drawing.Size(53, 20);
-            this.id_element.TabIndex = 8;
-            this.id_element.Visible = false;
+            this.exit_button.Location = new System.Drawing.Point(135, 344);
+            this.exit_button.Name = "exit_button";
+            this.exit_button.Size = new System.Drawing.Size(85, 35);
+            this.exit_button.TabIndex = 9;
+            this.exit_button.Text = "Retour";
+            this.exit_button.UseVisualStyleBackColor = true;
+            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
             // FormModal
             // 
@@ -165,5 +177,6 @@ namespace WinFormPimpMyUnicorn
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label admin_titre;
         private System.Windows.Forms.TextBox id_element;
+        private System.Windows.Forms.Button exit_button;
     }
 }

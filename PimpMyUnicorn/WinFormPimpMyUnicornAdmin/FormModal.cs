@@ -119,5 +119,10 @@ namespace WinFormPimpMyUnicorn
             image = Convert.ToBase64String(byteArrayForImage);
             partieID = Convert.ToInt32(select_partie.SelectedValue);
         }
+
+        private void exit_button_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
