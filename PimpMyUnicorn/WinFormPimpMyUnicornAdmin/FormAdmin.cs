@@ -16,7 +16,7 @@ namespace WinFormPimpMyUnicornAdmin
         public FormAdmin()
         {
             InitializeComponent();
-            drawDataGrid();
+            drawDataGridElement();
 
             table_element.Columns["Id_element"].Visible = false;
             table_element.Columns["elementsImg"].Visible = false;
@@ -42,9 +42,11 @@ namespace WinFormPimpMyUnicornAdmin
             };
             table_element.Columns.Add(delBtnCol);
 
+            drawDataGridPartie();
+
         }
 
-        public void drawDataGrid()
+        public void drawDataGridElement()
         {
             List<T_parties> parties = Crud.getAllParties();
             List<T_elements> elements = Crud.getAllElements();
@@ -57,6 +59,11 @@ namespace WinFormPimpMyUnicornAdmin
             table_element.DataSource = new BindingList<T_elements>(elements);
         }
 
+        public void drawDataGridPartie()
+        {
+            List<T_parties> parties = Crud.getAllParties();
+            table_partie.DataSource = new BindingList<T_parties>(parties);
+        }
         private void btn_create_Click(object sender, EventArgs e)
         {
             FormModal settingsForm = new FormModal();
@@ -71,7 +78,7 @@ namespace WinFormPimpMyUnicornAdmin
 
         private void SettingsForm_onUpdateDataGrid()
         {
-            this.Invoke(new MethodInvoker(delegate { this.drawDataGrid(); }));
+            this.Invoke(new MethodInvoker(delegate { this.drawDataGridElement(); }));
         }
 
         private void table_element_CellContentClick(object sender, DataGridViewCellEventArgs e)
