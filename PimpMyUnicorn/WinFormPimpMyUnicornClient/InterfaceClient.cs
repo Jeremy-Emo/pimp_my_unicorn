@@ -22,8 +22,7 @@ namespace WinFormPimpMyUnicornClient
             using (MySqlConnection cn = new MySqlConnection(_connString))
             {
                 cn.Open();
-                string query = "SELECT Id_partie, partielibelle FROM t_parties";
-                //string query = "SELECT Id_partie, partielibelle, partieOrdre FROM t_parties";
+                string query = "SELECT Id_partie, partieLibelle, partieOrdre FROM t_parties";
                 using (MySqlCommand cmd = new MySqlCommand(query, cn))
                 {
                     using (MySqlDataReader dr = cmd.ExecuteReader())
@@ -33,12 +32,13 @@ namespace WinFormPimpMyUnicornClient
                             _parties.Add(new PartiesDTO
                             {
                                 ID = Convert.ToInt32(dr.GetValue(0)),
-                                Libelle = dr.GetValue(1).ToString()
+                                Libelle = dr.GetValue(1).ToString(),
+                                partieOrdre = Convert.ToInt32(dr.GetValue(2))
                             });
                         }
                     }
                 }
-                //_parties = _parties.OrderBy(x => x.partieOrdre).ToList();
+                _parties = _parties.OrderBy(x => x.partieOrdre).ToList();
 
                 query = "SELECT Id_element, partie_id, elementLibelle, elementsImg FROM t_elements";
                 using (MySqlCommand cmd = new MySqlCommand(query, cn))
@@ -154,8 +154,13 @@ namespace WinFormPimpMyUnicornClient
 
         private Bitmap CombineAndResizeTwoImages(List<Image> images, int width, int height)
         {
+            int border = 0;
+            if (width > height)
+                border = height;
+            else
+                border = width;
             //a holder for the result
-            Bitmap result = new Bitmap(width, height);
+            Bitmap result = new Bitmap(border, border);
 
             //use a graphics object to draw the resized image into the bitmap
             using (Graphics graphics = Graphics.FromImage(result))
@@ -167,7 +172,7 @@ namespace WinFormPimpMyUnicornClient
                 //draw the images into the target bitmap
                 foreach (Image img in images)
                 {
-                    graphics.DrawImage(img, 0, 0, img.Width, img.Height);
+                    graphics.DrawImage(img, 0, 0, border, border);
                 }
             }
             //return the resulting bitmap
