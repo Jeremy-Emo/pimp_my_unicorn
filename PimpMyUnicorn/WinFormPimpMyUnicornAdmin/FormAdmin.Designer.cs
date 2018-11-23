@@ -72,7 +72,7 @@ namespace WinFormPimpMyUnicornAdmin
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Administration";
             ((System.ComponentModel.ISupportInitialize)(this.table_element)).EndInit();
             this.ResumeLayout(false);
 

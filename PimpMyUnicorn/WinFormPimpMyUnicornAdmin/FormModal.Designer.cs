@@ -1,4 +1,4 @@
-﻿namespace WinFormPimpMyUnicorn
+namespace WinFormPimpMyUnicorn
 {
     partial class FormModal
     {
@@ -145,7 +145,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormModal";
+            this.Text = "Administration";
             ((System.ComponentModel.ISupportInitialize)(this.display_image)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
