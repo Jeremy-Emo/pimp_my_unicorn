@@ -42,7 +42,29 @@ namespace WinFormPimpMyUnicornAdmin
             };
             table_element.Columns.Add(delBtnCol);
 
+
             drawDataGridPartie();
+            table_partie.Columns["Id_partie"].Visible = false;
+            table_partie.Columns["partieLibelle"].HeaderText = "Element";
+            table_partie.Columns["partieOrdre"].HeaderText = "Ordre";
+
+            DataGridViewButtonColumn dgBtnColPartie = new DataGridViewButtonColumn
+            {
+                UseColumnTextForButtonValue = true,
+                Text = "Details",
+                HeaderText = "Details",
+                Name = "Details"
+            };
+            table_partie.Columns.Add(dgBtnColPartie);
+
+            DataGridViewButtonColumn delBtnColPartie = new DataGridViewButtonColumn
+            {
+                UseColumnTextForButtonValue = true,
+                Text = "Supprimer",
+                HeaderText = "Supprimer",
+                Name = "Supprimer"
+            };
+            table_partie.Columns.Add(delBtnColPartie);
 
         }
 
