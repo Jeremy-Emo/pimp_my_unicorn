@@ -86,6 +86,7 @@ namespace WinFormPimpMyUnicornAdmin
             this.table_partie.Name = "table_partie";
             this.table_partie.Size = new System.Drawing.Size(701, 553);
             this.table_partie.TabIndex = 3;
+            this.table_partie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_partie_CellContentClick);
             // 
             // FormAdmin
             // 

@@ -23,7 +23,7 @@ namespace WinFormPimpMyUnicornAdmin
                 SQLiteConnection conn = new SQLiteConnection("Data Source = MyDatabase.db3; Version = 3;");
                 conn.Open();
                 string sql = "CREATE TABLE IF NOT EXISTS `t_parties` ("+
-                  "`Id_partie` INTEGER PRIMARY KEY NOT NULL," +
+                  "`Id_partie` INTEGER PRIMARY KEY AUTOINCREMENT," +
                   "`partieLibelle` varchar(255) NOT NULL," +
                   "`partieOrdre` int(11) NOT NULL" +
                 ");";
@@ -32,7 +32,7 @@ namespace WinFormPimpMyUnicornAdmin
 
 
                 string sql2 = "CREATE TABLE IF NOT EXISTS `t_elements` ("+
-                  "`Id_element` INTEGER PRIMARY KEY NOT NULL," +
+                  "`Id_element` INTEGER PRIMARY KEY AUTOINCREMENT," +
                   "`partie_id` int(11) NOT NULL,"+
                   "`elementLibelle` varchar(255) NOT NULL,"+
                   "`elementsImg` text NOT NULL"+
