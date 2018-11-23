@@ -67,6 +67,7 @@ namespace WCFPimpMyUnicorn
                 PartiesDTO partie = new PartiesDTO();
                 partie.ID = Convert.ToInt32(row["Id_partie"]);
                 partie.Libelle = row["partieLibelle"].ToString();
+                partie.Ordre = Convert.ToInt16(row["partieOrdre"]);
                 parties.Add(partie);
             }
             return parties;
