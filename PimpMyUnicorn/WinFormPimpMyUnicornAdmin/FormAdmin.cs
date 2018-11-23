@@ -138,5 +138,28 @@ namespace WinFormPimpMyUnicornAdmin
             formPartie.onUpdateDataGrid += new FormPartie.updateDataGrid(FormPartie_onUpdateDataGrid);
             formPartie.ShowDialog();
         }
+
+        private void table_partie_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == table_partie.Columns["Details"].Index)
+            {
+                T_parties thisPartie = (T_parties)table_partie.Rows[e.RowIndex].DataBoundItem;
+
+                FormPartie settingsForm = new FormPartie(thisPartie);
+                settingsForm.onUpdateDataGrid += new FormPartie.updateDataGrid(FormPartie_onUpdateDataGrid);
+                settingsForm.Show();
+            }
+            else if (e.ColumnIndex == table_partie.Columns["Supprimer"].Index)
+            {
+                T_parties thisPartie = (T_parties)table_partie.Rows[e.RowIndex].DataBoundItem;
+
+                DialogResult confirmResult = MessageBox.Show("Etes-vous sur de vouloir supprimer cette partie ?", "Etes-vous sur ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    Crud.deletePartie(thisPartie.Id_partie);
+                    table_partie.Rows.RemoveAt(e.RowIndex);
+                }
+            }
+        }
     }
 }
