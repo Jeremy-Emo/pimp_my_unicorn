@@ -90,7 +90,8 @@ namespace WinFormPimpMyUnicornClient
                         Location = new Point(90, 100 + 50 * turn),
                         DataSource = new BindingSource(thisComboBoxValue, null),
                         DisplayMember = "Value",
-                        ValueMember = "Key"
+                        ValueMember = "Key",
+                        Cursor = Cursors.Hand
                     };
                     thisComboBox.SelectedIndexChanged += new EventHandler(comboBoxChanged);
 
