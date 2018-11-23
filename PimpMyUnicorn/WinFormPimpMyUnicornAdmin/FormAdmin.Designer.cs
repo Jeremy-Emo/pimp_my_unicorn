@@ -70,6 +70,7 @@ namespace WinFormPimpMyUnicornAdmin
             this.btn_create_partie.TabIndex = 2;
             this.btn_create_partie.Text = "Ajouter partie";
             this.btn_create_partie.UseVisualStyleBackColor = true;
+            this.btn_create_partie.Click += new System.EventHandler(this.btn_create_partie_Click);
             // 
             // table_partie
             // 

@@ -81,6 +81,11 @@ namespace WinFormPimpMyUnicornAdmin
             this.Invoke(new MethodInvoker(delegate { this.drawDataGridElement(); }));
         }
 
+        private void FormPartie_onUpdateDataGrid()
+        {
+            this.Invoke(new MethodInvoker(delegate { this.drawDataGridPartie(); }));
+        }
+
         private void table_element_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == table_element.Columns["Details"].Index)
@@ -103,6 +108,13 @@ namespace WinFormPimpMyUnicornAdmin
                 }
             }
 
+        }
+
+        private void btn_create_partie_Click(object sender, EventArgs e)
+        {
+            FormPartie formPartie = new FormPartie();
+            formPartie.onUpdateDataGrid += new FormPartie.updateDataGrid(FormPartie_onUpdateDataGrid);
+            formPartie.ShowDialog();
         }
     }
 }

@@ -97,7 +97,7 @@ namespace WinFormPimpMyUnicornClient
             this.panelRight.BackColor = System.Drawing.Color.HotPink;
             this.panelRight.Location = new System.Drawing.Point(1025, 65);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(239, 800);
+            this.panelRight.Size = new System.Drawing.Size(239, 624);
             this.panelRight.TabIndex = 0;
             // 
             // panelFooter
@@ -105,7 +105,7 @@ namespace WinFormPimpMyUnicornClient
             this.panelFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFooter.BackColor = System.Drawing.Color.Violet;
-            this.panelFooter.Location = new System.Drawing.Point(0, 865);
+            this.panelFooter.Location = new System.Drawing.Point(0, 689);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1264, 56);
             this.panelFooter.TabIndex = 0;
@@ -118,7 +118,7 @@ namespace WinFormPimpMyUnicornClient
             this.panelLeft.Controls.Add(this.saveUnicorn);
             this.panelLeft.Location = new System.Drawing.Point(0, 65);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(225, 800);
+            this.panelLeft.Size = new System.Drawing.Size(225, 624);
             this.panelLeft.TabIndex = 2;
             // 
             // saveUnicorn
@@ -137,7 +137,7 @@ namespace WinFormPimpMyUnicornClient
             // 
             this.pictureBoxMain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMain.Location = new System.Drawing.Point(225, 65);
+            this.pictureBoxMain.Location = new System.Drawing.Point(225, -23);
             this.pictureBoxMain.Name = "pictureBoxMain";
             this.pictureBoxMain.Size = new System.Drawing.Size(800, 800);
             this.pictureBoxMain.TabIndex = 3;
@@ -148,7 +148,7 @@ namespace WinFormPimpMyUnicornClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 921);
+            this.ClientSize = new System.Drawing.Size(1264, 745);
             this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelFooter);

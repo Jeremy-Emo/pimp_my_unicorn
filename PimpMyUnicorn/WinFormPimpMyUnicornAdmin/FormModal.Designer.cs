@@ -120,7 +120,7 @@ namespace WinFormPimpMyUnicorn
             // 
             this.id_element.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.id_element.Enabled = false;
-            this.id_element.Location = new System.Drawing.Point(3, 548);
+            this.id_element.Location = new System.Drawing.Point(0, 573);
             this.id_element.Name = "id_element";
             this.id_element.Size = new System.Drawing.Size(53, 20);
             this.id_element.TabIndex = 8;
