@@ -13,7 +13,10 @@ namespace WCFPimpMyUnicorn
     {
         public List<ElementsDTO> GetElements()
         {
-            return MySQLProvider.GetElements();
+
+            List<ElementsDTO> dto = MySQLProvider.GetElements();
+
+            return dto;
         }
 
         public List<PartiesDTO> GetParties()

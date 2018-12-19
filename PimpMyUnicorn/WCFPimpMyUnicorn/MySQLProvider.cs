@@ -85,6 +85,7 @@ namespace WCFPimpMyUnicorn
                     string query = "SELECT Id_element, partie_id, elementLibelle, elementsImg FROM t_elements";
                     using (MySqlDataAdapter da = new MySqlDataAdapter(query, cn))
                     {
+                        da.SelectCommand.CommandTimeout = 600;
                         da.Fill(_dt);
                     }
                     cn.Close();

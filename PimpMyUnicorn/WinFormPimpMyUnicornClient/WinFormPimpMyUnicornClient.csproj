@@ -49,6 +49,9 @@
   <PropertyGroup>
     <StartupObject>WinFormPimpMyUnicornClient.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>licorne1.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -122,6 +125,7 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-licorne-50.png" />
+    <Content Include="licorne1.ico" />
     <Content Include="Resources\licorne1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
