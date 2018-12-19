@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\lock.png" />
     <None Include="Resources\icons8-licorne-50.png" />
     <Content Include="licorne1.ico" />
     <Content Include="Resources\licorne1.ico" />

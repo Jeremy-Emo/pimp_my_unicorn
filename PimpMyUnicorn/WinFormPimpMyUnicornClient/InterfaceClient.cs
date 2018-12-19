@@ -16,6 +16,10 @@ namespace WinFormPimpMyUnicornClient
         private string _connString = ConfigurationManager.ConnectionStrings["PimpMyUnicornDB"].ConnectionString;
         private List<PartiesDTO> _parties = new List<PartiesDTO>();
         private List<ElementsDTO> _elements = new List<ElementsDTO>();
+        private Dictionary<string,int> lockers = new Dictionary<string,int>();
+        private string labelGenerate = "labelPartie";
+        private string comboBoxGenerate = "comboBoxPartie";
+        private string buttonGenerate = "buttonLockerPartie";
 
         public InterfaceClient()
         {
@@ -75,7 +79,7 @@ namespace WinFormPimpMyUnicornClient
 
                 Label thisLabel = new Label
                 {
-                    Name = "labelPartie" + turn,
+                    Name = labelGenerate + turn,
                     Location = new Point(10, 30 + 50 * turn),
                     BackColor = Color.Transparent,
                     Text = partie.Libelle + ":",
@@ -85,25 +89,37 @@ namespace WinFormPimpMyUnicornClient
 
                 ComboBox thisComboBox = new ComboBox
                 {
-                    Name = "comboBoxartie" + turn,
+                    Name = comboBoxGenerate + turn,
                     Location = new Point(90, 30 + 50 * turn),
                     DataSource = new BindingSource(thisComboBoxValue, ""),
                     DisplayMember = "Value",
                     ValueMember = "Key",
                     Cursor = Cursors.Hand
                 };
-
-                PictureBox thisPictureBox = new PictureBox
+                Button thisButton = new Button
                 {
-                    Name = "pictureBoxPartie" + turn,
-                    Location = new Point(0, 0),
-                    Size = new Size(823, 791),
-                    BackColor = Color.Transparent
+                    Name = buttonGenerate + turn,
+                    Location = new Point(220, 28 + 50 * turn),
+                    Text = "",
+                    BackColor = Color.Transparent,
+                    BackgroundImage = Image.FromFile(@"..\..\Resources\lock.png"),
+                    Cursor = Cursors.Hand,
+                    Width = 25,
+                    Height = 25,
+                    BackgroundImageLayout = ImageLayout.Center
                 };
-                panelLeft.Controls.AddRange(new Control[] { thisLabel, thisComboBox });
+                lockers.Add(thisButton.Name, 0);
+                thisButton.Click += ThisButton_Click;
+                panelLeft.Controls.AddRange(new Control[] { thisLabel, thisComboBox, thisButton });
                 turn++;
             }
+        }
 
+        private void ThisButton_Click(object sender, EventArgs e)
+        {
+            Button thisButton = (Button)sender;
+            lockers[thisButton.Name] = lockers[thisButton.Name] == 0 ? 1 : 0;
+            thisButton.BackColor = thisButton.BackColor == Color.Green ? Color.Transparent : Color.Green;
         }
 
         private void InterfaceClient_Shown(object sender, EventArgs e)
@@ -150,11 +166,15 @@ namespace WinFormPimpMyUnicornClient
             List<ComboBox> comboboxes = panelLeft.Controls.OfType<ComboBox>().ToList();
             foreach (ComboBox cb in comboboxes)
             {
-                cb.SelectedIndexChanged -= comboBoxChanged;
-                int cbItems = cb.Items.Count;
-                if (cbItems > 1)
-                    cb.SelectedIndex = new Random().Next(cbItems);
-                cb.SelectedIndexChanged += comboBoxChanged;
+                string partieValue = cb.Name.Substring(cb.Name.Length - 1);
+                if (lockers[buttonGenerate + partieValue] == 0)
+                {
+                    cb.SelectedIndexChanged -= comboBoxChanged;
+                    int cbItems = cb.Items.Count;
+                    if (cbItems > 1)
+                        cb.SelectedIndex = new Random().Next(1, cbItems);
+                    cb.SelectedIndexChanged += comboBoxChanged;
+                }
                 if (cb == comboboxes.Last())
                     comboBoxChanged(null, null);
             }
