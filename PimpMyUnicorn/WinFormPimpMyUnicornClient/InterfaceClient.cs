@@ -44,7 +44,7 @@ namespace WinFormPimpMyUnicornClient
                 }
                 _parties = _parties.OrderBy(x => x.partieOrdre).ToList();
 
-                query = "SELECT Id_element, partie_id, elementLibelle, elementsImg FROM t_elements";
+                query = "SELECT Id_element, partie_id, elementLibelle, elementsImg FROM t_elements GROUP BY elementsImg";
                 using (MySqlCommand cmd = new MySqlCommand(query, cn))
                 {
                     using (MySqlDataReader dr = cmd.ExecuteReader())

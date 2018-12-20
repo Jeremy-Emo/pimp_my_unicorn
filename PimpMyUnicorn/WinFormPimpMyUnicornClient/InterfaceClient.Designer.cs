@@ -37,10 +37,10 @@ namespace WinFormPimpMyUnicornClient
             this.buttonReset = new System.Windows.Forms.Button();
             this.shuffleButton = new System.Windows.Forms.Button();
             this.panelFooter = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.saveUnicorn = new System.Windows.Forms.Button();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
@@ -150,6 +150,17 @@ namespace WinFormPimpMyUnicornClient
             this.panelFooter.Size = new System.Drawing.Size(1264, 56);
             this.panelFooter.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(425, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(448, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Copyright © 2018 Alexandre B, Dorian L, Jeremy E, Lucien B, Nicolas K - Tous droi" +
+    "ts réservés";
+            // 
             // panelLeft
             // 
             this.panelLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -190,22 +201,6 @@ namespace WinFormPimpMyUnicornClient
             this.pictureBoxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMain.TabIndex = 3;
             this.pictureBoxMain.TabStop = false;
-            //
-            // CopyRight Symbol
-            //
-            string copyrightUnicode = "00A9";
-            int value = int.Parse(copyrightUnicode, System.Globalization.NumberStyles.HexNumber);
-            string symbol = char.ConvertFromUtf32(value).ToString();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(425, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(448, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Copyright " + symbol + " 2018 Alexandre B, Dorian L, Jeremy E, Lucien B, Nicolas K - Tous droi" +
-    "ts réservés";
             // 
             // InterfaceClient
             // 
