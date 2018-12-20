@@ -101,13 +101,15 @@ namespace WinFormPimpMyUnicornClient
                     Name = buttonGenerate + turn,
                     Location = new Point(220, 28 + 50 * turn),
                     Text = "",
-                    BackColor = Color.Transparent,
-                    BackgroundImage = Image.FromFile(@"..\..\Resources\lock.png"),
+                    BackColor = Color.HotPink,
+                    BackgroundImage = Image.FromFile(@"..\..\Resources\unlock.png"),
                     Cursor = Cursors.Hand,
                     Width = 25,
                     Height = 25,
-                    BackgroundImageLayout = ImageLayout.Center
+                    FlatStyle = FlatStyle.Flat,
+                    BackgroundImageLayout = ImageLayout.Center,
                 };
+                thisButton.FlatAppearance.BorderSize = 0;
                 lockers.Add(thisButton.Name, 0);
                 thisButton.Click += ThisButton_Click;
                 panelLeft.Controls.AddRange(new Control[] { thisLabel, thisComboBox, thisButton });
@@ -119,7 +121,18 @@ namespace WinFormPimpMyUnicornClient
         {
             Button thisButton = (Button)sender;
             lockers[thisButton.Name] = lockers[thisButton.Name] == 0 ? 1 : 0;
-            thisButton.BackColor = thisButton.BackColor == Color.Green ? Color.Transparent : Color.Green;
+            if (thisButton.BackColor == Color.FromArgb(210, 97, 141))
+            {
+                thisButton.BackColor = Color.HotPink;
+                thisButton.BackgroundImage = Image.FromFile(@"..\..\Resources\unlock.png");
+            }
+            else
+            {
+                thisButton.BackColor = Color.FromArgb(210, 97, 141);
+                thisButton.BackgroundImage = Image.FromFile(@"..\..\Resources\lock.png");
+            }
+
+            
         }
 
         private void InterfaceClient_Shown(object sender, EventArgs e)
