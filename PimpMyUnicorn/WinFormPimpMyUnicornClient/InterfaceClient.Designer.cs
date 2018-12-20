@@ -34,16 +34,18 @@ namespace WinFormPimpMyUnicornClient
             this.pictureBoxLeft = new System.Windows.Forms.PictureBox();
             this.labelTitre = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.shuffleButton = new System.Windows.Forms.Button();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.saveUnicorn = new System.Windows.Forms.Button();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
-            this.buttonReset = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
             this.panelRight.SuspendLayout();
+            this.panelFooter.SuspendLayout();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
@@ -85,11 +87,11 @@ namespace WinFormPimpMyUnicornClient
             // 
             this.labelTitre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTitre.AutoSize = true;
-            this.labelTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitre.ForeColor = System.Drawing.Color.Fuchsia;
-            this.labelTitre.Location = new System.Drawing.Point(563, 19);
+            this.labelTitre.Font = new System.Drawing.Font("Forte", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitre.ForeColor = System.Drawing.Color.DeepPink;
+            this.labelTitre.Location = new System.Drawing.Point(512, 9);
             this.labelTitre.Name = "labelTitre";
-            this.labelTitre.Size = new System.Drawing.Size(175, 25);
+            this.labelTitre.Size = new System.Drawing.Size(292, 38);
             this.labelTitre.TabIndex = 0;
             this.labelTitre.Text = "Pimp My Unicorn";
             // 
@@ -105,12 +107,33 @@ namespace WinFormPimpMyUnicornClient
             this.panelRight.Size = new System.Drawing.Size(239, 624);
             this.panelRight.TabIndex = 0;
             // 
+            // buttonReset
+            // 
+            this.buttonReset.BackColor = System.Drawing.Color.Purple;
+            this.buttonReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonReset.FlatAppearance.BorderSize = 0;
+            this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReset.Font = new System.Drawing.Font("Jokerman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReset.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonReset.Location = new System.Drawing.Point(6, 15);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(230, 32);
+            this.buttonReset.TabIndex = 1;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
             // shuffleButton
             // 
-            this.shuffleButton.BackColor = System.Drawing.Color.White;
-            this.shuffleButton.Location = new System.Drawing.Point(4, 30);
+            this.shuffleButton.BackColor = System.Drawing.Color.Purple;
+            this.shuffleButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.shuffleButton.FlatAppearance.BorderSize = 0;
+            this.shuffleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shuffleButton.Font = new System.Drawing.Font("Jokerman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shuffleButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.shuffleButton.Location = new System.Drawing.Point(6, 64);
             this.shuffleButton.Name = "shuffleButton";
-            this.shuffleButton.Size = new System.Drawing.Size(230, 23);
+            this.shuffleButton.Size = new System.Drawing.Size(230, 32);
             this.shuffleButton.TabIndex = 0;
             this.shuffleButton.Text = "Aléatoire";
             this.shuffleButton.UseVisualStyleBackColor = false;
@@ -121,6 +144,7 @@ namespace WinFormPimpMyUnicornClient
             this.panelFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFooter.BackColor = System.Drawing.Color.Violet;
+            this.panelFooter.Controls.Add(this.label1);
             this.panelFooter.Location = new System.Drawing.Point(0, 689);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1264, 56);
@@ -139,11 +163,15 @@ namespace WinFormPimpMyUnicornClient
             // 
             // saveUnicorn
             // 
-            this.saveUnicorn.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.saveUnicorn.BackColor = System.Drawing.Color.Purple;
             this.saveUnicorn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveUnicorn.FlatAppearance.BorderSize = 0;
+            this.saveUnicorn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveUnicorn.Font = new System.Drawing.Font("Jokerman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveUnicorn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.saveUnicorn.Location = new System.Drawing.Point(15, 30);
             this.saveUnicorn.Name = "saveUnicorn";
-            this.saveUnicorn.Size = new System.Drawing.Size(219, 23);
+            this.saveUnicorn.Size = new System.Drawing.Size(219, 34);
             this.saveUnicorn.TabIndex = 0;
             this.saveUnicorn.Text = "Enregistrer ma Licorne";
             this.saveUnicorn.UseVisualStyleBackColor = false;
@@ -162,17 +190,22 @@ namespace WinFormPimpMyUnicornClient
             this.pictureBoxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMain.TabIndex = 3;
             this.pictureBoxMain.TabStop = false;
+            //
+            // CopyRight Symbol
+            //
+            string copyrightUnicode = "00A9";
+            int value = int.Parse(copyrightUnicode, System.Globalization.NumberStyles.HexNumber);
+            string symbol = char.ConvertFromUtf32(value).ToString();
             // 
-            // buttonReset
+            // label1
             // 
-            this.buttonReset.BackColor = System.Drawing.Color.White;
-            this.buttonReset.Location = new System.Drawing.Point(4, 3);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(230, 23);
-            this.buttonReset.TabIndex = 1;
-            this.buttonReset.Text = "Reset";
-            this.buttonReset.UseVisualStyleBackColor = false;
-            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(425, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(448, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Copyright " + symbol + " 2018 Alexandre B, Dorian L, Jeremy E, Lucien B, Nicolas K - Tous droi" +
+    "ts réservés";
             // 
             // InterfaceClient
             // 
@@ -196,6 +229,8 @@ namespace WinFormPimpMyUnicornClient
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).EndInit();
             this.panelRight.ResumeLayout(false);
+            this.panelFooter.ResumeLayout(false);
+            this.panelFooter.PerformLayout();
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             this.ResumeLayout(false);
@@ -215,5 +250,6 @@ namespace WinFormPimpMyUnicornClient
         private System.Windows.Forms.PictureBox pictureBoxMain;
         private System.Windows.Forms.Button shuffleButton;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Label label1;
     }
 }
