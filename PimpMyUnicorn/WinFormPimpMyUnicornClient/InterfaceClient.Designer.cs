@@ -39,6 +39,7 @@ namespace WinFormPimpMyUnicornClient
             this.panelLeft = new System.Windows.Forms.Panel();
             this.saveUnicorn = new System.Windows.Forms.Button();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
@@ -97,6 +98,7 @@ namespace WinFormPimpMyUnicornClient
             this.panelRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelRight.BackColor = System.Drawing.Color.HotPink;
+            this.panelRight.Controls.Add(this.buttonReset);
             this.panelRight.Controls.Add(this.shuffleButton);
             this.panelRight.Location = new System.Drawing.Point(1025, 65);
             this.panelRight.Name = "panelRight";
@@ -106,7 +108,7 @@ namespace WinFormPimpMyUnicornClient
             // shuffleButton
             // 
             this.shuffleButton.BackColor = System.Drawing.Color.White;
-            this.shuffleButton.Location = new System.Drawing.Point(6, 30);
+            this.shuffleButton.Location = new System.Drawing.Point(4, 30);
             this.shuffleButton.Name = "shuffleButton";
             this.shuffleButton.Size = new System.Drawing.Size(230, 23);
             this.shuffleButton.TabIndex = 0;
@@ -161,6 +163,17 @@ namespace WinFormPimpMyUnicornClient
             this.pictureBoxMain.TabIndex = 3;
             this.pictureBoxMain.TabStop = false;
             // 
+            // buttonReset
+            // 
+            this.buttonReset.BackColor = System.Drawing.Color.White;
+            this.buttonReset.Location = new System.Drawing.Point(4, 3);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(230, 23);
+            this.buttonReset.TabIndex = 1;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
             // InterfaceClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,5 +214,6 @@ namespace WinFormPimpMyUnicornClient
         private System.Windows.Forms.Button saveUnicorn;
         private System.Windows.Forms.PictureBox pictureBoxMain;
         private System.Windows.Forms.Button shuffleButton;
+        private System.Windows.Forms.Button buttonReset;
     }
 }
