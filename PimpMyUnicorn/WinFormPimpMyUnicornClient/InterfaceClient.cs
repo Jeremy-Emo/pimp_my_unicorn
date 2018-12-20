@@ -216,5 +216,24 @@ namespace WinFormPimpMyUnicornClient
             //return the resulting bitmap
             return result;
         }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            List<ComboBox> comboboxes = panelLeft.Controls.OfType<ComboBox>().ToList();
+            foreach (ComboBox cb in comboboxes)
+            {
+                string partieValue = cb.Name.Substring(cb.Name.Length - 1);
+                if(lockers[buttonGenerate + partieValue] == 1)
+                {
+                    Button thisButton = (Button)Controls.Find(buttonGenerate + partieValue, true)[0];
+                    thisButton.PerformClick();
+                }
+                cb.SelectedIndexChanged -= comboBoxChanged;
+                cb.SelectedIndex = 1;
+                cb.SelectedIndexChanged += comboBoxChanged;
+                if (cb == comboboxes.Last())
+                    comboBoxChanged(null, null);
+            }
+        }
     }
 }
